@@ -71,7 +71,29 @@ molavi-agentic-os install --platform hermes --agent research-agent
 
 ---
 
-## ۴. جایگاه برند
+## ۴. ابزارهای مکمل اکوسیستم TM
+
+این تولکیت با سایر ابزارها و ریپوزیتوری‌های تخصصی ما در گیت‌هاب هم‌افزایی مستقیم دارد:
+
+| ابزار / مخزن | کاربرد تخصصی | ارتباط با این تولکیت |
+|---|---|---|
+| [`geo-scope`](https://github.com/tmolavi/geo-scope) | فریم‌ورک ارزیابی تجربی دیده‌شدن در چت‌بات‌های AI (Perplexity, Gemini, ChatGPT) | تأمین داده‌های استناد تجربی برای ایجنت‌های GEO |
+| [`sage-audit`](https://github.com/tmolavi/sage-audit) | موتور ۳ ستونه ممیزی سئو تکنیکال، AEO و ساختار اسکیما | تغذیه کدهای ممیزی تکنیکال برای `seo-auditor` |
+| [`siteprobe`](https://github.com/tmolavi/siteprobe) | خزنده و ابزار اتونوموس پایش و اصلاح کد و کانفیگ سایت | اعمال خودکار پچ‌های فنی بر اساس گزارش ایجنت‌ها |
+| [`molavi-web-intelligence`](https://github.com/tmolavi/molavi-web-intelligence) | موتور سلف‌هاستد اینتلیجنس وب بدون هزینه توکن | لایه خزش و جمع‌آوری داده بدون توکن برای ایجنت پژوهش |
+| [`humanize-ai-copywriter`](https://github.com/tmolavi/humanize-ai-copywriter) | موتور کپی‌رایتینگ انسانی با آنتروپی صفر و حذف پرتی‌های هوش مصنوعی | هسته اصلی مهارت `unslop-humanizer` و نویسنده محتوا |
+| [`mcp-geo-server`](https://github.com/tmolavi/mcp-geo-server) | سرور FastMCP برای ارزیابی سئو هوش مصنوعی در Cursor و Claude | ارائه ابزارهای MCP استاندارد به ایجنت‌ها |
+| [`mcp-agent-skills-hub`](https://github.com/tmolavi/mcp-agent-skills-hub) | هاب توزیع اسکیل‌های کاربردی و کانفیگ‌های ابری ایجنت‌ها | کاتالوگ مهارت‌های گسترده برای محیط‌های کدنویسی |
+| [`news-traffic-engine`](https://github.com/tmolavi/news-traffic-engine) | پلتفرم اتونوموس ترافیک رسانه و ایندکس سریع در گوگل نیوز | موتور مکمل تیم تولید محتوا برای ناشران خبر |
+| [`bale-bot-skills`](https://github.com/tmolavi/bale-bot-skills) | اسکیل‌های توسعه بات و مینی‌اپ برای پیام‌رسان بله | استقرار ایجنت‌های TM در پیام‌رسان‌های بومی |
+| [`n8n-agent-skills`](https://github.com/tmolavi/n8n-agent-skills) | اسکیل‌های تجمیع و هدایت ایجنت‌ها با ورک‌فلوهای سازمانی n8n | اتصال ایجنت‌های TM به پایپ‌لاین‌های n8n |
+| [`scholar-provenance`](https://github.com/tmolavi/scholar-provenance) | لجر شواهد و تولید مقالات علمی بدون ارجاع ساختگی | استانداردسازی شواهد برای فکت‌چکر و پژوهشگر |
+| [`lean-agent-skills`](https://github.com/tmolavi/lean-agent-skills) | اسکیل‌های کم‌توکن و بهینه برای کاهش مصرف کانتکست | کاهش مصرف رم و کانتکست در تیم‌های پرجمعیت |
+| [`hermes-meeting-intelligence`](https://github.com/tmolavi/hermes-meeting-intelligence) | هوش مصنوعی مدیریت جلسات با کانتکست پایدار بین جلسه‌ای | ارتقای مهارت‌های مدیر پروژه در پایش جلسات |
+
+---
+
+## ۵. جایگاه برند
 
 * **مالک پروژه:** تقی مولوی (Taqi Molavi)
 * **تخصص:** معماری سیستم‌های هوش مصنوعی | استراتژیست SEO و GEO

@@ -155,7 +155,29 @@ print(f"Ticket ID: {ticket.ticket_id} | Status: {ticket.status.value}")
 
 ---
 
-## 6. Brand Positioning
+## 6. TM Ecosystem & Complementary Open Source Tools
+
+TM AI Agent Toolkit is designed to seamlessly integrate with our specialized research, SEO/GEO, web intelligence, and agent distribution repositories:
+
+| Category | Repository | Description | Key Synergy |
+|---|---|---|---|
+| **AI Measurement & GEO** | [`geo-scope`](https://github.com/tmolavi/geo-scope) | Empirical AI Answer Visibility Measurement Framework across Perplexity, Gemini, ChatGPT. | Feeds empirical citation data into `geo-auditor` & `ai-visibility-analyst`. |
+| **SEO & Entity Diagnostics** | [`sage-audit`](https://github.com/tmolavi/sage-audit) | Unified 3-pillar audit engine for Technical SEO, JSON-LD Schema AEO, and GEO. | Powers technical audit routines inside `seo-auditor`. |
+| **Autonomous Web Fixing** | [`siteprobe`](https://github.com/tmolavi/siteprobe) | Autonomous website crawler, diagnostics, and AST code/config fixer. | Executes automated remediation for issues detected by agent audits. |
+| **Deterministic Engine** | [`molavi-web-intelligence`](https://github.com/tmolavi/molavi-web-intelligence) | Async crawling, headless rendering, and Technical SEO & GEO analyzer ($0.00 token cost). | Zero-token data ingestion backend for `web-research` skills. |
+| **Human Copywriting** | [`humanize-ai-copywriter`](https://github.com/tmolavi/humanize-ai-copywriter) | Zero-entropy ($H \to 0$) human copywriting, AI detector bypass, and SEO/GEO citations. | Native engine powering `unslop-humanizer` and `content-writer`. |
+| **Model Context Protocol** | [`mcp-geo-server`](https://github.com/tmolavi/mcp-geo-server) | FastMCP server exposing GEO & RAG-readiness audit tools to Claude, Cursor & Codex. | Ready-to-use MCP endpoints for TM agents. |
+| **Agent Distribution** | [`mcp-agent-skills-hub`](https://github.com/tmolavi/mcp-agent-skills-hub) | Standardized, production-tested skill catalog for Antigravity, Cursor, Codex & Claude Code. | Extended marketplace for specialized agent skills. |
+| **Media & Publishing** | [`news-traffic-engine`](https://github.com/tmolavi/news-traffic-engine) | Autonomous AI agent framework for newsroom traffic, Google News & Discover indexing. | Integrates with `content-production-team` for automated media publishers. |
+| **Enterprise Messaging** | [`bale-bot-skills`](https://github.com/tmolavi/bale-bot-skills) | Production agent skills for Bale Messenger Bot & MiniApp development. | Deploys TM agents to enterprise Persian messenger audiences. |
+| **Workflow Automation** | [`n8n-agent-skills`](https://github.com/tmolavi/n8n-agent-skills) | Unified n8n agent skills, MCP routing, and production workflow orchestration. | Bridges TM agents with complex enterprise n8n workflow nodes. |
+| **Research Evidence** | [`scholar-provenance`](https://github.com/tmolavi/scholar-provenance) | Academic evidence ledgers and traceable manuscripts with zero hallucinated citations. | Supplies verifiable citation schemas to `fact-checker` and `research-agent`. |
+| **Token Optimization** | [`lean-agent-skills`](https://github.com/tmolavi/lean-agent-skills) | Token-efficient agent skills optimized for reduced prompt overhead and fast caching. | Reduces context consumption across heavy multi-agent swarms. |
+| **Meeting Intelligence** | [`hermes-meeting-intelligence`](https://github.com/tmolavi/hermes-meeting-intelligence) | Speaker-aware meeting memory, real-time transcript intelligence, and cross-session context. | Enhances `project-manager` with meeting intelligence. |
+
+---
+
+## 7. Brand Positioning
 
 **Molavi Ecosystem**  
 - **Brand Owner:** Taqi Molavi  
@@ -165,7 +187,7 @@ print(f"Ticket ID: {ticket.ticket_id} | Status: {ticket.status.value}")
 
 ---
 
-## 7. License & Attribution
+## 8. License & Attribution
 
 - **Core Framework:** Licensed under the [MIT License](LICENSE).
 - **Third-Party Attribution:** Documented in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and [SOURCES.md](SOURCES.md).
