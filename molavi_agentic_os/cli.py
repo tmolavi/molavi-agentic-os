@@ -46,6 +46,10 @@ def main():
     inst_p.add_argument("--skill", help="Skill ID to install")
     inst_p.add_argument("--output-dir", default="./dist", help="Output directory")
 
+    # check-governance
+    gov_p = subparsers.add_parser("check-governance", help="Validate repository compliance with TM Open Source Standard")
+    gov_p.add_argument("--path", default=".", help="Root path of repository to check")
+
     args = parser.parse_args()
     if not args.command:
         parser.print_help()
@@ -57,6 +61,13 @@ def main():
         handle_validate(args.path)
     elif args.command == "install":
         handle_install(args.platform, args.agent, args.skill, args.output_dir)
+    elif args.command == "check-governance":
+        handle_governance(args.path)
+
+def handle_governance(path: str):
+    from scripts.check_governance import check_repository
+    ok = check_repository(os.path.abspath(path))
+    sys.exit(0 if ok else 1)
 
 def handle_list(target: str):
     root = os.getcwd()

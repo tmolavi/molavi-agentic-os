@@ -1,15 +1,22 @@
-# Molavi Agentic OS (Azərbaycan Dili)
+# TM AI Agent Toolkit (Azərbaycan Dili)
 
 <p align="center">
-  <strong>Agentlər, Bacarıqlar, Çoxagentli Komandalar və İş Axınları Üçün Açıq Mənbəli Ekosistem.</strong><br>
+  <strong>Molavi Agentic OS: Agentlər, Bacarıqlar, Çoxagentli Komandalar və İş Axınları Üçün Açıq Mənbəli Ekosistem.</strong><br>
   <em>Daha Ağıllı Agentlər Yaradın. Daha Yaxşı Komandalar Qurun. Real İşləri Avtomatlaşdırın.</em>
 </p>
 
 ---
 
+## 🏛️ İdarəetmə və Model Şəffaflığı
+* **Kanonik Standart:** [`TM-OPEN-SOURCE-STANDARD.md`](../../TM-OPEN-SOURCE-STANDARD.md)
+* **Model Tələbləri və Pulsuz Alternativlər:** [`MODEL-REQUIREMENTS.md`](../../MODEL-REQUIREMENTS.md)
+* **Mövcud 24 Repozitoriyanın Reyestri:** [`docs/repository-governance/EXISTING-REPOSITORIES.md`](../repository-governance/EXISTING-REPOSITORIES.md)
+
+---
+
 ## 1. Layihə Haqqında
 
-**Molavi Agentic OS**, **Tağı Mövləvi (Taqi Molavi)** tərəfindən idarə olunan, süni intellekt agentləri və avtomatlaşdırma üçün yaradılmış modul və modeldən asılı olmayan açıq mənbəli sistemdir.
+**TM AI Agent Toolkit** (Molavi Agentic OS), **Tağı Mövləvi (Taqi Molavi)** tərəfindən TM Açıq Mənbə ekosistemi çərçivəsində yaradılmış modul və modeldən asılı olmayan açıq mənbəli sistemdir.
 
 ### Əsas Üstünlüklər:
 * **Ödənişsiz Modellərə Üstünlük:** Ollama vasitəsilə lokal modellərdən və pulsuz bulud sistemlərindən (Groq, Gemini) istifadə edir.

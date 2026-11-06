@@ -33,3 +33,7 @@ jobs:
       - name: Validate Ecosystem Artifacts (Bot-Ready)
         run: |
           python -m molavi_agentic_os validate
+
+      - name: Verify TM Open Source Governance Compliance
+        run: |
+          python scripts/check_governance.py

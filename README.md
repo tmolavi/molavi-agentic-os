@@ -1,16 +1,26 @@
-# Molavi Agentic OS
+# TM AI Agent Toolkit
 
 <p align="center">
-  <strong>An Open Ecosystem of Agents, Skills, Teams, Workflows & Tools.</strong><br>
+  <strong>Molavi Agentic OS: An Open Ecosystem of Agents, Skills, Teams, Workflows & Tools.</strong><br>
   <em>Build Smarter Agents. Create Better Teams. Automate Real Work.</em>
 </p>
 
 <p align="center">
   <a href="https://github.com/tmolavi/molavi-agentic-os/actions"><img src="https://img.shields.io/badge/CI-Passing-brightgreen?style=flat-square" alt="CI Status"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue?style=flat-square" alt="License"></a>
+  <a href="TM-OPEN-SOURCE-STANDARD.md"><img src="https://img.shields.io/badge/Governance-TM%20Standard-purple?style=flat-square" alt="Governance Standard"></a>
+  <a href="MODEL-REQUIREMENTS.md"><img src="https://img.shields.io/badge/Model-Free--First-brightgreen?style=flat-square" alt="Model Requirements"></a>
   <a href="AUDIT_REPORT.md"><img src="https://img.shields.io/badge/Audit-20%20Repos%20Verified-success?style=flat-square" alt="Audit"></a>
   <a href="https://molavi.pro"><img src="https://img.shields.io/badge/Brand-Molavi.pro-orange?style=flat-square" alt="Molavi Brand"></a>
 </p>
+
+---
+
+## 🏛️ Ecosystem & Governance
+* **Canonical Governance Policy:** [`TM-OPEN-SOURCE-STANDARD.md`](TM-OPEN-SOURCE-STANDARD.md)
+* **Model & Cost Transparency:** [`MODEL-REQUIREMENTS.md`](MODEL-REQUIREMENTS.md)
+* **Global Ecosystem Inventory:** [`docs/repository-governance/EXISTING-REPOSITORIES.md`](docs/repository-governance/EXISTING-REPOSITORIES.md)
+* **Reusable Repository Template:** [`.github/REPOSITORY_TEMPLATE/`](.github/REPOSITORY_TEMPLATE/)
 
 ---
 
@@ -25,10 +35,10 @@
 
 ## 1. Overview
 
-**Molavi Agentic OS** is an open-source, modular, model-agnostic AI agent operating framework developed under the **Molavi brand** by **Taqi Molavi** (AI Systems Architect, SEO & GEO Strategist).
+**TM AI Agent Toolkit** (Molavi Agentic OS) is an open-source, modular, model-agnostic AI agent operating framework developed under the **TM (Taqi Molavi) Open Source ecosystem**.
 
-Unlike marketing hype lists or unstructured prompt collections, Molavi Agentic OS consolidates real, tested architectural patterns into a zero-dependency, production-ready system:
-- **Free-First Model Strategy:** Run out-of-the-box on local open-weight models (Ollama: Llama 3, Mistral) and zero-cost cloud tiers (Groq, Gemini Free Tier) before escalating to paid models.
+Unlike marketing hype lists or unstructured prompt collections, TM AI Agent Toolkit consolidates real, tested architectural patterns into a zero-dependency, production-ready system:
+- **Free-First Model Strategy:** Run out-of-the-box on local open-weight models (Ollama: Llama 3.2, Mistral) and zero-cost cloud tiers (Groq, Gemini Free Tier) before escalating to paid models (see [`MODEL-REQUIREMENTS.md`](MODEL-REQUIREMENTS.md)).
 - **Permission-Slip Security:** Default Human-in-the-Loop (`L2_HUMAN_APPROVAL`) with cryptographically signed approval tickets for any sensitive actions (emails, trades, code deployments).
 - **Foreman Verification Gate:** Strict enforcement of the golden rule: *"It is not allowed to guess."* Tasks cannot be declared complete without verifiable evidence artifacts.
 - **Model-Agnostic & Cross-Platform:** Native export adapters for OpenAI Codex / Cursor, Claude Code, Hermes Agent, Antigravity, and Generic CLI runtimes.

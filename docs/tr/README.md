@@ -1,15 +1,22 @@
-# Molavi Agentic OS (Türkçe Rehber)
+# TM AI Agent Toolkit (Türkçe Rehber)
 
 <p align="center">
-  <strong>Ajanlar, Beceriler, Çoklu Ajan Ekipleri ve İş Akışları İçin Açık Ekosistem.</strong><br>
+  <strong>Molavi Agentic OS: Ajanlar, Beceriler, Çoklu Ajan Ekipleri ve İş Akışları İçin Açık Ekosistem.</strong><br>
   <em>Daha Akıllı Ajanlar Oluşturun. Daha İyi Ekipler Kurun. Gerçek İşleri Otomatikleştirin.</em>
 </p>
 
 ---
 
+## 🏛️ Yönetişim ve Model Şeffaflığı
+* **Kanonik Yönetişim Standardı:** [`TM-OPEN-SOURCE-STANDARD.md`](../../TM-OPEN-SOURCE-STANDARD.md)
+* **Model Gereksinimleri ve Ücretsiz Alternatifler:** [`MODEL-REQUIREMENTS.md`](../../MODEL-REQUIREMENTS.md)
+* **Mevcut 24 Deponun Envanteri:** [`docs/repository-governance/EXISTING-REPOSITORIES.md`](../repository-governance/EXISTING-REPOSITORIES.md)
+
+---
+
 ## 1. Genel Bakış
 
-**Molavi Agentic OS**, **Taqi Molavi** (Yapay Zeka Sistemleri Mimarı, SEO & GEO Stratejisti) tarafından Molavi markası altında geliştirilen açık kaynaklı, modüler ve modelden bağımsız bir yapay zeka ajanı işletim sistemidir.
+**TM AI Agent Toolkit** (Molavi Agentic OS), **Taqi Molavi** (Yapay Zeka Sistemleri Mimarı, SEO & GEO Stratejisti) tarafından TM Açık Kaynak ekosistemi altında geliştirilen açık kaynaklı, modüler ve modelden bağımsız bir yapay zeka ajanı işletim sistemidir.
 
 Toplulukta yayılan 20 popüler ajansal deponun kapsamlı teknik denetimi yapılarak tasarlanmıştır.
 
