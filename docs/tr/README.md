@@ -18,7 +18,7 @@
 
 **TM AI Agent Toolkit** (Molavi Agentic OS), **Taqi Molavi** (Yapay Zeka Sistemleri Mimarı, SEO & GEO Stratejisti) tarafından TM Açık Kaynak ekosistemi altında geliştirilen açık kaynaklı, modüler ve modelden bağımsız bir yapay zeka ajanı işletim sistemidir.
 
-Toplulukta yayılan 20 popüler ajansal deponun kapsamlı teknik denetimi yapılarak tasarlanmıştır.
+Sıfırdan modern yapay zeka sistemleri mimarisi standartlarına uygun olarak tasarlanmıştır.
 
 ### Temel İlkeler:
 1. **Önce Ücretsiz Model Stratejisi (Free-First):** Yerel açık kaynaklı modeller (Ollama) ve ücretsiz bulut katmanları (Groq, Gemini Free Tier) önceliklidir.

@@ -10,7 +10,7 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue?style=flat-square" alt="License"></a>
   <a href="TM-OPEN-SOURCE-STANDARD.md"><img src="https://img.shields.io/badge/Governance-TM%20Standard-purple?style=flat-square" alt="Governance Standard"></a>
   <a href="MODEL-REQUIREMENTS.md"><img src="https://img.shields.io/badge/Model-Free--First-brightgreen?style=flat-square" alt="Model Requirements"></a>
-  <a href="AUDIT_REPORT.md"><img src="https://img.shields.io/badge/Audit-20%20Repos%20Verified-success?style=flat-square" alt="Audit"></a>
+  <a href="SYSTEM_ARCHITECTURE.md"><img src="https://img.shields.io/badge/Architecture-Verified-success?style=flat-square" alt="Architecture"></a>
   <a href="https://molavi.pro"><img src="https://img.shields.io/badge/Brand-Molavi.pro-orange?style=flat-square" alt="Molavi Brand"></a>
 </p>
 
@@ -77,18 +77,17 @@ Unlike marketing hype lists or unstructured prompt collections, TM AI Agent Tool
 
 ---
 
-## 3. Audited Source Repositories
+## 3. Core Architectural Pillars
 
-This project was built following a comprehensive technical audit of 20 viral AI agent repositories. Full evaluations, license provenance, and security risk analyses are published in [AUDIT_REPORT.md](AUDIT_REPORT.md).
+TM AI Agent Toolkit is engineered as an end-to-end, zero-dependency platform based on five foundational pillars:
 
-| Category | Studied Projects | Molavi Agentic OS Action |
+| Pillar | Technical Mechanism | Production Benefit |
 |---|---|---|
-| **Catalogs & Profiles** | `awesome-grok-bot`, `grok-bot-templates` | Extracted taxonomy, rewritten into 100/100 Bot-Ready schemas |
-| **Org Charts & Teams** | `serenakeyitan/agent-org-chart` | Adopted hierarchical delegation protocols natively |
-| **Human Approval** | `supersuit-tech/permission-slip`, `hypergrok` | Adopted HMAC approval ticket engine into core security |
-| **Verification Gate** | `Archive228/foreman` | Adopted the "No-Guessing" artifact verification gate |
-| **Queue & Runtime** | `grokbot-queue`, `OpenGrokBot` | Rewritten into pure-Python, zero-dependency `TaskQueue` |
-| **Dangerous Root Daemons** | `head77x/grokbotos` | **STRICTLY REJECTED** due to excessive root permissions |
+| **Hierarchical Team Topologies** | Formal `TeamDefinition` with coordinator, specialist roles, and delegation rules | Eliminates confusion and context pollution in multi-agent workflows |
+| **Permission-Slip Human Approval** | Cryptographic HMAC-signed `ApprovalTicket` system for all L2 sensitive actions | Prevents unauthorized emails, deployments, trades, or server mutations |
+| **Foreman Verification Gate** | Anti-hallucination verification requiring verifiable evidence artifacts | Eliminates fake completion claims; agents cannot declare done without proof |
+| **Zero-Dependency TaskQueue** | Pure Python thread-safe priority queue and DAG execution engine | Runs anywhere without requiring Redis, Celery, Docker, or external daemon setups |
+| **Free-First Model Router** | Provider-agnostic routing prioritizing local Ollama and zero-cost cloud tiers | Enables complete local offline execution at $0.00 marginal cost |
 
 ---
 

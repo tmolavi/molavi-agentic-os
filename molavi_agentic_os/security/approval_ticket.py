@@ -1,6 +1,6 @@
 """Permission-Slip Tokenized Human Approval System.
 
-Inspired by supersuit-tech/permission-slip and galleonlabs/hypergrok-trading-desk.
+Cryptographically signed token-based human approval engine for TM AI Agent Toolkit.
 """
 
 from dataclasses import dataclass, field, asdict

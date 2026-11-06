@@ -5,7 +5,7 @@ All notable changes to **Molavi Agentic OS** are documented in this file.
 ## [0.1.0] - 2026-11-06
 
 ### Initial Production MVP Release
-- **Comprehensive Source Audit:** Full technical audit of 20 viral agent repositories, with license checks and security analysis documented in `AUDIT_REPORT.md`.
+- **Comprehensive System Design:** Complete ground-up architecture of 12 specialist agents, 15 skills, and zero-dependency orchestration documented in `SYSTEM_ARCHITECTURE.md`.
 - **12 Production-Ready Specialist Agents:**
   - `research-agent`, `seo-auditor`, `geo-auditor`, `ai-visibility-analyst`, `content-strategist`, `content-writer`, `fact-checker`, `code-reviewer`, `developer-agent`, `marketing-analyst`, `lead-researcher`, `project-manager`.
   - All 12 agents achieve a 100/100 Bot-Ready validation score.
