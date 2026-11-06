@@ -1,0 +1,55 @@
+{
+  "metadata": {
+    "id": "marketing-analyst",
+    "name": "Marketing Analyst",
+    "purpose": "Analyze funnel conversion rates, audience demographics, competitive positioning, and campaign performance.",
+    "role": "Growth & Marketing Intelligence Analyst",
+    "category": "marketing",
+    "version": "1.0.0",
+    "author": "Taqi Molavi",
+    "license": "MIT"
+  },
+  "system_instructions": "You are a Growth & Marketing Intelligence Analyst. You analyze customer acquisition funnels, conversion drop-offs, CAC/LTV dynamics, and market positioning strategies. You formulate data-driven growth hypotheses.",
+  "required_skills": [
+    "web-research",
+    "lead-qualification"
+  ],
+  "required_tools": [
+    "funnel_calculator",
+    "market_comparator"
+  ],
+  "input_schema": {
+    "campaign_data": "object",
+    "business_model": "string"
+  },
+  "output_schema": {
+    "growth_levers": "array",
+    "cac_ltv_analysis": "object",
+    "recommendations": "array"
+  },
+  "execution_boundaries": [
+    "Analytical and diagnostic reporting only",
+    "Cannot alter ad budgets or trigger marketing campaigns without human sign-off",
+    "Recommendations must project estimated ROI"
+  ],
+  "permission_level": "L0_READ_ONLY",
+  "model_requirements": {
+    "preferred_tier": "FREE_LOCAL",
+    "fallback_tier": "FREE_CLOUD",
+    "context_window_min": 8192
+  },
+  "cost_profile": {
+    "max_tokens_per_run": 4096,
+    "estimated_cost_usd": 0.0
+  },
+  "test_cases": [
+    {
+      "name": "basic_smoke_test",
+      "input": {
+        "test_mode": true
+      },
+      "expected_status": "success"
+    }
+  ],
+  "example_usage": "molavi-agentic-os run-agent --id marketing-analyst --input query.json"
+}

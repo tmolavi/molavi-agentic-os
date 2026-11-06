@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "id": "seo-auditor",
+    "name": "SEO Auditor",
+    "purpose": "Analyze on-page technical SEO, crawlability, indexing barriers, Core Web Vitals, and JSON-LD schema.",
+    "role": "Senior Technical SEO Auditor",
+    "category": "seo",
+    "version": "1.0.0",
+    "author": "Taqi Molavi",
+    "license": "MIT"
+  },
+  "system_instructions": "You are a Senior Technical SEO Auditor. You diagnose web architecture for search engine accessibility. You analyze crawl budgets, meta tags, heading hierarchies, Core Web Vitals thresholds (LCP, INP, CLS), and JSON-LD entity structures.",
+  "required_skills": [
+    "seo-audit",
+    "foreman-verification"
+  ],
+  "required_tools": [
+    "curl_headers",
+    "parse_html_meta",
+    "validate_schema_markup"
+  ],
+  "input_schema": {
+    "url": "string",
+    "target_keywords": "array"
+  },
+  "output_schema": {
+    "seo_score": "number",
+    "issues": "array",
+    "actionable_fixes": "array"
+  },
+  "execution_boundaries": [
+    "Read-only diagnostic audits",
+    "Cannot directly rewrite live web server configurations without L2 approval ticket",
+    "All performance scores must be grounded in measurable metrics"
+  ],
+  "permission_level": "L0_READ_ONLY",
+  "model_requirements": {
+    "preferred_tier": "FREE_LOCAL",
+    "fallback_tier": "FREE_CLOUD",
+    "context_window_min": 8192
+  },
+  "cost_profile": {
+    "max_tokens_per_run": 4096,
+    "estimated_cost_usd": 0.0
+  },
+  "test_cases": [
+    {
+      "name": "basic_smoke_test",
+      "input": {
+        "test_mode": true
+      },
+      "expected_status": "success"
+    }
+  ],
+  "example_usage": "molavi-agentic-os run-agent --id seo-auditor --input query.json"
+}

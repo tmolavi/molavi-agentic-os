@@ -1,0 +1,55 @@
+{
+  "id": "ai-visibility-audit-team",
+  "name": "AI Visibility Audit Team",
+  "purpose": "Benchmark and score entity visibility, sentiment, and citability across LLM answer engines.",
+  "coordinator": "project-manager",
+  "roles": [
+    {
+      "role_id": "coordinator",
+      "agent_id": "project-manager",
+      "title": "Audit Manager",
+      "responsibilities": [
+        "Coordinate query sets",
+        "Monitor benchmark execution"
+      ],
+      "can_delegate_to": [
+        "analyst",
+        "verifier"
+      ]
+    },
+    {
+      "role_id": "analyst",
+      "agent_id": "ai-visibility-analyst",
+      "title": "Visibility Analyst",
+      "responsibilities": [
+        "Run benchmark prompts",
+        "Compute share of voice"
+      ],
+      "can_delegate_to": []
+    },
+    {
+      "role_id": "verifier",
+      "agent_id": "fact-checker",
+      "title": "Citation Verifier",
+      "responsibilities": [
+        "Validate factual accuracy of AI answers"
+      ],
+      "can_delegate_to": []
+    }
+  ],
+  "delegation_rules": [
+    "Manager assigns benchmark queries to Analyst",
+    "Verifier confirms sources"
+  ],
+  "execution_sequence": [
+    "coordinator",
+    "analyst",
+    "verifier",
+    "coordinator"
+  ],
+  "dependencies": [],
+  "review_process": "Citation integrity check with minimum 2 sources per claim",
+  "failure_handling": "escalate_to_human",
+  "approval_requirements": [],
+  "final_deliverable": "AI Share of Voice Benchmark & Recommendation Matrix"
+}

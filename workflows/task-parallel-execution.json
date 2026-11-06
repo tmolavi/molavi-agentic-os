@@ -1,0 +1,27 @@
+{
+  "id": "task-parallel-execution",
+  "name": "Parallel Multi-Task Execution & Verification",
+  "description": "Distribute subtasks across worker queue -> Parallel execution -> Foreman verification -> Aggregation.",
+  "steps": [
+    {
+      "step_id": "step_1_dispatch",
+      "name": "Queue Parallel Jobs",
+      "agent_id": "project-manager",
+      "action": "task-queue-orchestrator",
+      "inputs": {},
+      "depends_on": []
+    },
+    {
+      "step_id": "step_2_verify",
+      "name": "Foreman Verification Gate",
+      "agent_id": "project-manager",
+      "action": "foreman-verification",
+      "inputs": {},
+      "depends_on": [
+        "step_1_dispatch"
+      ]
+    }
+  ],
+  "on_failure": "halt_and_notify",
+  "final_output_key": "execution_results"
+}

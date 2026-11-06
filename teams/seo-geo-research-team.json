@@ -1,0 +1,73 @@
+{
+  "id": "seo-geo-research-team",
+  "name": "SEO & GEO Research Team",
+  "purpose": "Comprehensive audit and strategic optimization of search engine (Google) and AI engine (Perplexity, ChatGPT, Gemini) brand visibility.",
+  "coordinator": "project-manager",
+  "roles": [
+    {
+      "role_id": "coordinator",
+      "agent_id": "project-manager",
+      "title": "Operations Lead",
+      "responsibilities": [
+        "Plan audit scope",
+        "Assign targets",
+        "Synthesize findings"
+      ],
+      "can_delegate_to": [
+        "seo-lead",
+        "geo-lead",
+        "research-lead"
+      ]
+    },
+    {
+      "role_id": "seo-lead",
+      "agent_id": "seo-auditor",
+      "title": "Technical SEO Auditor",
+      "responsibilities": [
+        "Audit crawlability",
+        "Analyze Core Web Vitals",
+        "Check schema"
+      ],
+      "can_delegate_to": []
+    },
+    {
+      "role_id": "geo-lead",
+      "agent_id": "geo-auditor",
+      "title": "GEO Auditor",
+      "responsibilities": [
+        "Evaluate AI citability",
+        "Check llms.txt",
+        "Audit knowledge graph"
+      ],
+      "can_delegate_to": []
+    },
+    {
+      "role_id": "research-lead",
+      "agent_id": "research-agent",
+      "title": "Competitor Researcher",
+      "responsibilities": [
+        "Benchmark competitor rankings and citations"
+      ],
+      "can_delegate_to": []
+    }
+  ],
+  "delegation_rules": [
+    "Coordinator decomposes URL into SEO and GEO audit subtasks",
+    "SEO and GEO leads run in parallel",
+    "Coordinator validates with Foreman verification"
+  ],
+  "execution_sequence": [
+    "coordinator",
+    "seo-lead",
+    "geo-lead",
+    "research-lead",
+    "coordinator"
+  ],
+  "dependencies": [],
+  "review_process": "Foreman gatekeeper validates evidence URLs for all findings",
+  "failure_handling": "retry_with_backoff_then_escalate",
+  "approval_requirements": [
+    "Publishing changes to web server requires L2 approval ticket"
+  ],
+  "final_deliverable": "Unified SEO & GEO Strategic Audit Report with prioritized actionable fixes"
+}

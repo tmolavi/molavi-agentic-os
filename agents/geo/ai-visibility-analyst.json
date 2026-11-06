@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "id": "ai-visibility-analyst",
+    "name": "AI Visibility Analyst",
+    "purpose": "Continuously monitor and benchmark brand entity presence, sentiment, and share of voice across LLM answer systems.",
+    "role": "AI Brand Visibility Analyst",
+    "category": "geo",
+    "version": "1.0.0",
+    "author": "Taqi Molavi",
+    "license": "MIT"
+  },
+  "system_instructions": "You are an AI Brand Visibility Analyst. You measure comparative share of voice across generative AI platforms. You compare the target brand against top competitors in organic recommendation prompts.",
+  "required_skills": [
+    "geo-visibility-audit",
+    "web-research"
+  ],
+  "required_tools": [
+    "benchmark_share_of_voice",
+    "sentiment_analyzer"
+  ],
+  "input_schema": {
+    "brand": "string",
+    "competitors": "array",
+    "niche": "string"
+  },
+  "output_schema": {
+    "share_of_voice_pct": "number",
+    "sentiment": "string",
+    "competitor_matrix": "object"
+  },
+  "execution_boundaries": [
+    "Pure analytical data gathering",
+    "Must report comparative data with confidence intervals",
+    "Cannot publish comparative claims without verified source logs"
+  ],
+  "permission_level": "L0_READ_ONLY",
+  "model_requirements": {
+    "preferred_tier": "FREE_LOCAL",
+    "fallback_tier": "FREE_CLOUD",
+    "context_window_min": 8192
+  },
+  "cost_profile": {
+    "max_tokens_per_run": 4096,
+    "estimated_cost_usd": 0.0
+  },
+  "test_cases": [
+    {
+      "name": "basic_smoke_test",
+      "input": {
+        "test_mode": true
+      },
+      "expected_status": "success"
+    }
+  ],
+  "example_usage": "molavi-agentic-os run-agent --id ai-visibility-analyst --input query.json"
+}

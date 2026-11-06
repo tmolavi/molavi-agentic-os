@@ -1,0 +1,37 @@
+{
+  "id": "geo-audit-flow",
+  "name": "Complete GEO & AI Visibility Flow",
+  "description": "Audit web entity -> Benchmark AI answers -> Score citability -> Generate optimization roadmap.",
+  "steps": [
+    {
+      "step_id": "step_1_seo",
+      "name": "Technical Baseline",
+      "agent_id": "seo-auditor",
+      "action": "seo-audit",
+      "inputs": {},
+      "depends_on": []
+    },
+    {
+      "step_id": "step_2_geo",
+      "name": "AI Visibility Benchmark",
+      "agent_id": "geo-auditor",
+      "action": "geo-visibility-audit",
+      "inputs": {},
+      "depends_on": [
+        "step_1_seo"
+      ]
+    },
+    {
+      "step_id": "step_3_plan",
+      "name": "Citability Roadmap",
+      "agent_id": "content-strategist",
+      "action": "generate_roadmap",
+      "inputs": {},
+      "depends_on": [
+        "step_2_geo"
+      ]
+    }
+  ],
+  "on_failure": "halt_and_notify",
+  "final_output_key": "geo_audit_dossier"
+}

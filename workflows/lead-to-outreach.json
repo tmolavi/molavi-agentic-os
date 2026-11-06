@@ -1,0 +1,40 @@
+{
+  "id": "lead-to-outreach",
+  "name": "Lead Discovery to Approval-Gated Outreach",
+  "description": "Discover leads -> Score qualification -> Draft customized email -> Generate L2 Approval Ticket.",
+  "steps": [
+    {
+      "step_id": "step_1_find",
+      "name": "Find Target Accounts",
+      "agent_id": "lead-researcher",
+      "action": "lead-qualification",
+      "inputs": {},
+      "depends_on": []
+    },
+    {
+      "step_id": "step_2_draft",
+      "name": "Draft Personal Message",
+      "agent_id": "content-writer",
+      "action": "outreach-drafter",
+      "inputs": {},
+      "depends_on": [
+        "step_1_find"
+      ]
+    },
+    {
+      "step_id": "step_3_ticket",
+      "name": "Create Human Approval Ticket",
+      "agent_id": "project-manager",
+      "action": "permission-slip",
+      "inputs": {
+        "risk_level": "HIGH"
+      },
+      "depends_on": [
+        "step_2_draft"
+      ],
+      "requires_approval": true
+    }
+  ],
+  "on_failure": "halt_and_notify",
+  "final_output_key": "outreach_campaign_batch"
+}

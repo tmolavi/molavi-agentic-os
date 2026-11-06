@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "molavi-agentic-os"
+version = "0.1.0"
+description = "Molavi Agentic OS: An Open Ecosystem of Agents, Skills, Teams, Workflows & Tools."
+readme = "README.md"
+authors = [
+    { name = "Taghi Molavi", email = "contact@molavi.pro" }
+]
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-cov>=4.0.0"
+]
+
+[project.scripts]
+molavi-agentic-os = "molavi_agentic_os.cli:main"

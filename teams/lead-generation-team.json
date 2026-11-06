@@ -1,0 +1,65 @@
+{
+  "id": "lead-generation-team",
+  "name": "Lead Generation & Outreach Team",
+  "purpose": "Identify target accounts, score ICP qualification, draft personalized outreach, and prepare approval tickets.",
+  "coordinator": "project-manager",
+  "roles": [
+    {
+      "role_id": "pm",
+      "agent_id": "project-manager",
+      "title": "Pipeline Coordinator",
+      "responsibilities": [
+        "Manage prospecting pipeline"
+      ],
+      "can_delegate_to": [
+        "researcher",
+        "analyst",
+        "writer"
+      ]
+    },
+    {
+      "role_id": "researcher",
+      "agent_id": "lead-researcher",
+      "title": "Account Researcher",
+      "responsibilities": [
+        "Locate decision makers and company data"
+      ],
+      "can_delegate_to": []
+    },
+    {
+      "role_id": "analyst",
+      "agent_id": "marketing-analyst",
+      "title": "Market Analyst",
+      "responsibilities": [
+        "Score ICP fit and qualification triggers"
+      ],
+      "can_delegate_to": []
+    },
+    {
+      "role_id": "writer",
+      "agent_id": "content-writer",
+      "title": "Outreach Drafter",
+      "responsibilities": [
+        "Draft customized value-driven messages"
+      ],
+      "can_delegate_to": []
+    }
+  ],
+  "delegation_rules": [
+    "Researcher gathers leads -> Analyst qualifies -> Writer drafts -> PM creates Approval Ticket"
+  ],
+  "execution_sequence": [
+    "pm",
+    "researcher",
+    "analyst",
+    "writer",
+    "pm"
+  ],
+  "dependencies": [],
+  "review_process": "Strict permission-slip ticket creation before any message dispatch",
+  "failure_handling": "halt_and_notify",
+  "approval_requirements": [
+    "Every single outbound email or message strictly requires L2 human approval ticket"
+  ],
+  "final_deliverable": "Qualified Prospect Dossier with drafted messages and pending approval tickets"
+}

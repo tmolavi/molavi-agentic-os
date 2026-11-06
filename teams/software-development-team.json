@@ -1,0 +1,57 @@
+{
+  "id": "software-development-team",
+  "name": "Software Development Team",
+  "purpose": "Design, implement, test, and review software features and bug fixes with Clean Code rigor.",
+  "coordinator": "project-manager",
+  "roles": [
+    {
+      "role_id": "pm",
+      "agent_id": "project-manager",
+      "title": "Sprint Coordinator",
+      "responsibilities": [
+        "Decompose requirements",
+        "Track deliverables"
+      ],
+      "can_delegate_to": [
+        "dev",
+        "reviewer"
+      ]
+    },
+    {
+      "role_id": "dev",
+      "agent_id": "developer-agent",
+      "title": "Systems Developer",
+      "responsibilities": [
+        "Write modular code and comprehensive tests"
+      ],
+      "can_delegate_to": []
+    },
+    {
+      "role_id": "reviewer",
+      "agent_id": "code-reviewer",
+      "title": "Principal Reviewer",
+      "responsibilities": [
+        "Audit code diffs for security, style, and correctness"
+      ],
+      "can_delegate_to": []
+    }
+  ],
+  "delegation_rules": [
+    "PM sends spec to Dev",
+    "Dev submits diff and tests to Reviewer",
+    "Reviewer approves or requests changes"
+  ],
+  "execution_sequence": [
+    "pm",
+    "dev",
+    "reviewer",
+    "pm"
+  ],
+  "dependencies": [],
+  "review_process": "Automated unit tests must pass 100% with zero regressions",
+  "failure_handling": "halt_and_notify",
+  "approval_requirements": [
+    "Git push to production or merge requires human approval"
+  ],
+  "final_deliverable": "Tested, reviewed, and verified git commit with documentation"
+}

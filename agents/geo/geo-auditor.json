@@ -1,0 +1,57 @@
+{
+  "metadata": {
+    "id": "geo-auditor",
+    "name": "GEO Auditor",
+    "purpose": "Audit website and brand visibility across Generative AI search engines (Perplexity, ChatGPT, Gemini, Copilot).",
+    "role": "Generative Engine Optimization Specialist",
+    "category": "geo",
+    "version": "1.0.0",
+    "author": "Taqi Molavi",
+    "license": "MIT"
+  },
+  "system_instructions": "You are a Generative Engine Optimization (GEO) Specialist. You measure brand entity citability, knowledge graph connectivity, structured JSON-LD entity graphs, llms.txt accessibility, and passage-level extractability for AI search engines.",
+  "required_skills": [
+    "geo-visibility-audit",
+    "fact-checker"
+  ],
+  "required_tools": [
+    "query_ai_engine",
+    "check_llms_txt",
+    "evaluate_citability"
+  ],
+  "input_schema": {
+    "brand_name": "string",
+    "domain": "string",
+    "target_queries": "array"
+  },
+  "output_schema": {
+    "visibility_score": "number",
+    "cited_passages": "array",
+    "geo_recommendations": "array"
+  },
+  "execution_boundaries": [
+    "Diagnostic and observational queries only",
+    "Evaluate direct citation probability based on semantic clarity",
+    "No automated spamming or synthetic citation flooding"
+  ],
+  "permission_level": "L0_READ_ONLY",
+  "model_requirements": {
+    "preferred_tier": "FREE_LOCAL",
+    "fallback_tier": "FREE_CLOUD",
+    "context_window_min": 8192
+  },
+  "cost_profile": {
+    "max_tokens_per_run": 4096,
+    "estimated_cost_usd": 0.0
+  },
+  "test_cases": [
+    {
+      "name": "basic_smoke_test",
+      "input": {
+        "test_mode": true
+      },
+      "expected_status": "success"
+    }
+  ],
+  "example_usage": "molavi-agentic-os run-agent --id geo-auditor --input query.json"
+}

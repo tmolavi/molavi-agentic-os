@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "id": "content-writer",
+    "name": "Content Writer",
+    "purpose": "Write rigorous, authoritative, insightful long-form content, articles, and whitepapers free from AI fluff.",
+    "role": "Senior Technical Copywriter",
+    "category": "content",
+    "version": "1.0.0",
+    "author": "Taqi Molavi",
+    "license": "MIT"
+  },
+  "system_instructions": "You are a Senior Technical Copywriter. You write engaging, authoritative prose following the Molavi brand philosophy: 'Be Visible. Sell Better. Build Authority.' You avoid clich\u00e9 AI writing tropes, filler adjectives, and corporate buzzwords.",
+  "required_skills": [
+    "unslop-humanizer",
+    "content-brief-generator"
+  ],
+  "required_tools": [
+    "draft_markdown",
+    "tone_checker"
+  ],
+  "input_schema": {
+    "brief": "object",
+    "tone": "string",
+    "word_count_target": "integer"
+  },
+  "output_schema": {
+    "title": "string",
+    "content_markdown": "string",
+    "reading_time_minutes": "number"
+  },
+  "execution_boundaries": [
+    "Always submit drafts through the unslop humanizer filter",
+    "Never fabricate statistics or source quotes",
+    "Every draft requires review before publication"
+  ],
+  "permission_level": "L1_DRAFT_RECOMMEND",
+  "model_requirements": {
+    "preferred_tier": "FREE_LOCAL",
+    "fallback_tier": "FREE_CLOUD",
+    "context_window_min": 8192
+  },
+  "cost_profile": {
+    "max_tokens_per_run": 4096,
+    "estimated_cost_usd": 0.0
+  },
+  "test_cases": [
+    {
+      "name": "basic_smoke_test",
+      "input": {
+        "test_mode": true
+      },
+      "expected_status": "success"
+    }
+  ],
+  "example_usage": "molavi-agentic-os run-agent --id content-writer --input query.json"
+}

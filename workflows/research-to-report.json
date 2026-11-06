@@ -1,0 +1,39 @@
+{
+  "id": "research-to-report",
+  "name": "Research to Verified Report",
+  "description": "Scour sources -> Analyze findings -> Fact-check claims -> Compile executive report.",
+  "steps": [
+    {
+      "step_id": "step_1_gather",
+      "name": "Gather Evidence",
+      "agent_id": "research-agent",
+      "action": "web-research",
+      "inputs": {
+        "depth": "deep"
+      },
+      "depends_on": []
+    },
+    {
+      "step_id": "step_2_verify",
+      "name": "Verify Facts",
+      "agent_id": "fact-checker",
+      "action": "fact-checker",
+      "inputs": {},
+      "depends_on": [
+        "step_1_gather"
+      ]
+    },
+    {
+      "step_id": "step_3_compile",
+      "name": "Compile Executive Report",
+      "agent_id": "content-writer",
+      "action": "draft_report",
+      "inputs": {},
+      "depends_on": [
+        "step_2_verify"
+      ]
+    }
+  ],
+  "on_failure": "halt_and_notify",
+  "final_output_key": "verified_report"
+}

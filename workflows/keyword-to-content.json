@@ -1,0 +1,47 @@
+{
+  "id": "keyword-to-content",
+  "name": "Keyword to Humanized Content",
+  "description": "Keyword analysis -> Editorial brief -> Drafting -> Unslop humanizer -> QA.",
+  "steps": [
+    {
+      "step_id": "step_1_brief",
+      "name": "Generate Brief",
+      "agent_id": "content-strategist",
+      "action": "content-brief-generator",
+      "inputs": {},
+      "depends_on": []
+    },
+    {
+      "step_id": "step_2_draft",
+      "name": "Write Article",
+      "agent_id": "content-writer",
+      "action": "draft_content",
+      "inputs": {},
+      "depends_on": [
+        "step_1_brief"
+      ]
+    },
+    {
+      "step_id": "step_3_unslop",
+      "name": "Humanize & Remove Slop",
+      "agent_id": "content-writer",
+      "action": "unslop-humanizer",
+      "inputs": {},
+      "depends_on": [
+        "step_2_draft"
+      ]
+    },
+    {
+      "step_id": "step_4_qa",
+      "name": "Fact Check & QA",
+      "agent_id": "fact-checker",
+      "action": "fact-checker",
+      "inputs": {},
+      "depends_on": [
+        "step_3_unslop"
+      ]
+    }
+  ],
+  "on_failure": "retry_with_backoff_then_escalate",
+  "final_output_key": "published_draft"
+}

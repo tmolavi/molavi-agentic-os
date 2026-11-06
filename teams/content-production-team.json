@@ -1,0 +1,57 @@
+{
+  "id": "content-production-team",
+  "name": "Content Production Team",
+  "purpose": "Plan, draft, humanize, fact-check, and review high-authority pillar content and technical articles.",
+  "coordinator": "content-strategist",
+  "roles": [
+    {
+      "role_id": "strategist",
+      "agent_id": "content-strategist",
+      "title": "Editorial Strategist",
+      "responsibilities": [
+        "Map topic clusters",
+        "Create detailed briefs"
+      ],
+      "can_delegate_to": [
+        "writer",
+        "checker"
+      ]
+    },
+    {
+      "role_id": "writer",
+      "agent_id": "content-writer",
+      "title": "Lead Copywriter",
+      "responsibilities": [
+        "Write deep, engaging prose free of AI clich\u00e9s"
+      ],
+      "can_delegate_to": []
+    },
+    {
+      "role_id": "checker",
+      "agent_id": "fact-checker",
+      "title": "Verification Editor",
+      "responsibilities": [
+        "Validate all citations and numerical claims"
+      ],
+      "can_delegate_to": []
+    }
+  ],
+  "delegation_rules": [
+    "Strategist delivers Brief to Writer",
+    "Writer delivers Draft to Checker",
+    "Strategist signs off"
+  ],
+  "execution_sequence": [
+    "strategist",
+    "writer",
+    "checker",
+    "strategist"
+  ],
+  "dependencies": [],
+  "review_process": "Unslop humanizer filter + Fact-check verification gate",
+  "failure_handling": "retry_with_backoff_then_escalate",
+  "approval_requirements": [
+    "CMS publication requires L2 human approval ticket"
+  ],
+  "final_deliverable": "Publication-Ready Technical Article with verified citations and metadata"
+}
