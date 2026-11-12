@@ -21,6 +21,7 @@ REQUIRED_FILES = [
 ]
 
 REQUIRED_LANGUAGES = [
+    ("English (en)", "docs/en/README.md"),
     ("Persian (fa)", "docs/fa/README.md"),
     ("Turkish (tr)", "docs/tr/README.md"),
     ("Azerbaijani (az)", "docs/az/README.md"),

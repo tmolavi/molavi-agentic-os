@@ -1,4 +1,17 @@
-from .foreman_gate import ForemanVerificationGate
-from .evaluator import AgentOutputEvaluator
+"""TM Evaluation Module."""
 
-__all__ = ["ForemanVerificationGate", "AgentOutputEvaluator"]
+from .evaluator import AgentOutputEvaluator, EvaluationScore
+from .foreman_gate import ForemanVerificationGate, VerificationArtifact, VerificationResult
+from .autoresearch import AutoresearchLoop, ResearchHypothesis, ExperimentTrial, KeepRevertDecision
+
+__all__ = [
+    "AgentOutputEvaluator",
+    "EvaluationScore",
+    "ForemanVerificationGate",
+    "VerificationArtifact",
+    "VerificationResult",
+    "AutoresearchLoop",
+    "ResearchHypothesis",
+    "ExperimentTrial",
+    "KeepRevertDecision"
+]

@@ -1,24 +1,73 @@
 [build-system]
-requires = ["setuptools>=61.0"]
+requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "molavi-agentic-os"
-version = "0.1.0"
-description = "Molavi Agentic OS: An Open Ecosystem of Agents, Skills, Teams, Workflows & Tools."
+version = "0.2.0"
+description = "TM Molavi Agentic OS: Modular, model-agnostic operating ecosystem for autonomous AI agents, skills, teams, workflows, and zero-dependency orchestration."
 readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
 authors = [
     { name = "Taghi Molavi", email = "contact@molavi.pro" }
 ]
-license = { text = "MIT" }
-requires-python = ">=3.10"
+keywords = [
+    "agentic-os",
+    "ai-agents",
+    "autonomous-agents",
+    "multi-agent-systems",
+    "mcp",
+    "model-context-protocol",
+    "llm-orchestration",
+    "hermes-agent",
+    "claude-code",
+    "antigravity",
+    "codex",
+    "crewai-alternative",
+    "langgraph-alternative",
+    "foreman-verification",
+    "free-first-models",
+    "second-brain",
+    "zero-dependency",
+    "reproducible-ai"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Application Frameworks",
+    "Topic :: System :: Distributed Computing",
+    "Topic :: Security"
+]
 dependencies = []
 
 [project.optional-dependencies]
 dev = [
     "pytest>=8.0.0",
-    "pytest-cov>=4.0.0"
+    "pytest-cov>=4.0.0",
+    "build>=1.0.0",
+    "twine>=4.0.0"
 ]
+
+[project.urls]
+Homepage = "https://github.com/tmolavi/molavi-agentic-os"
+Documentation = "https://github.com/tmolavi/molavi-agentic-os#readme"
+Repository = "https://github.com/tmolavi/molavi-agentic-os.git"
+"Bug Tracker" = "https://github.com/tmolavi/molavi-agentic-os/issues"
+Changelog = "https://github.com/tmolavi/molavi-agentic-os/blob/main/CHANGELOG.md"
+Author = "https://molavi.pro"
 
 [project.scripts]
 molavi-agentic-os = "molavi_agentic_os.cli:main"
+tm-agentic-os = "molavi_agentic_os.cli:main"

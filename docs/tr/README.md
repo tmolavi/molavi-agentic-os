@@ -1,51 +1,94 @@
-# TM AI Agent Toolkit (Türkçe Rehber)
+# TM Molavi Agentic OS — Türkçe Dokümantasyon
 
-<p align="center">
-  <strong>Molavi Agentic OS: Ajanlar, Beceriler, Çoklu Ajan Ekipleri ve İş Akışları İçin Açık Ekosistem.</strong><br>
-  <em>Daha Akıllı Ajanlar Oluşturun. Daha İyi Ekipler Kurun. Gerçek İşleri Otomatikleştirin.</em>
-</p>
+<div align="center">
 
----
+**Otonom Yapay Zekâ Ajanları, Beceriler, Çoklu Ajan Ekipleri, Yerel Bellek ve Platformlar Arası Çalıştırma için Açık Kaynaklı, Modüler İşletim Ekosistemi**  
+*Daha akıllı ajanlar geliştirin. Daha yetkin ekipler kurun. Üretim sistemlerini somut kanıtlarla otomatikleştirin.*
 
-## 🏛️ Yönetişim ve Model Şeffaflığı
-* **Kanonik Yönetişim Standardı:** [`TM-OPEN-SOURCE-STANDARD.md`](../../TM-OPEN-SOURCE-STANDARD.md)
-* **Model Gereksinimleri ve Ücretsiz Alternatifler:** [`MODEL-REQUIREMENTS.md`](../../MODEL-REQUIREMENTS.md)
-* **Mevcut 24 Deponun Envanteri:** [`docs/repository-governance/EXISTING-REPOSITORIES.md`](../repository-governance/EXISTING-REPOSITORIES.md)
+[![PyPI Sürümü](https://img.shields.io/pypi/v/molavi-agentic-os.svg?color=blue&style=flat-square)](https://pypi.org/project/molavi-agentic-os/)
+[![CI Durumu](https://img.shields.io/github/actions/workflow/status/tmolavi/molavi-agentic-os/ci.yml?branch=main&label=CI&style=flat-square)](https://github.com/tmolavi/molavi-agentic-os/actions)
+[![MIT Lisansı](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](../../LICENSE)
+[![Sıfır Maliyet](https://img.shields.io/badge/Maliyet-0.00%24%20(Free--First)-brightgreen?style=flat-square)](../../MODEL-REQUIREMENTS.md)
+[![Mimar](https://img.shields.io/badge/Mimar-Taghi%20Molavi-orange?style=flat-square)](https://molavi.pro)
 
----
+[English (Root)](../../README.md) · [English (Docs)](../en/README.md) · [فارسی](../fa/README.md) · [Türkçe](README.md) · [Azərbaycan dili](../az/README.md) · [العربية](../ar/README.md)
 
-## 1. Genel Bakış
-
-**TM AI Agent Toolkit** (Molavi Agentic OS), **Taqi Molavi** (Yapay Zeka Sistemleri Mimarı, SEO & GEO Stratejisti) tarafından TM Açık Kaynak ekosistemi altında geliştirilen açık kaynaklı, modüler ve modelden bağımsız bir yapay zeka ajanı işletim sistemidir.
-
-Sıfırdan modern yapay zeka sistemleri mimarisi standartlarına uygun olarak tasarlanmıştır.
-
-### Temel İlkeler:
-1. **Önce Ücretsiz Model Stratejisi (Free-First):** Yerel açık kaynaklı modeller (Ollama) ve ücretsiz bulut katmanları (Groq, Gemini Free Tier) önceliklidir.
-2. **Permission-Slip Güvenlik Modeli:** E-posta gönderme, kod dağıtma veya finansal işlemler gibi hassas eylemler insan onayı (`L2_HUMAN_APPROVAL`) gerektirir.
-3. **Foreman Doğrulama Kapısı:** *"Tahmin yürütmek yasaktır"* kuralı gereğince, somut kanıt sunulmadan hiçbir görev tamamlandı sayılamaz.
+</div>
 
 ---
 
-## 2. Kurulum ve Çalıştırma
+## 🏛️ Yönetişim Belgeleri ve Şeffaflık
+* **TM Açık Kaynak Yönetişim Standardı:** [`TM-OPEN-SOURCE-STANDARD.md`](../../TM-OPEN-SOURCE-STANDARD.md)
+* **Model Gereksinimleri ve Maliyet Şeffaflığı:** [`MODEL-REQUIREMENTS.md`](../../MODEL-REQUIREMENTS.md)
+* **Lisans Uyumluluk Matrisi:** [`LICENSE_COMPATIBILITY.md`](../../LICENSE_COMPATIBILITY.md)
+* **Kaynaklar ve Provenans:** [`SOURCES.md`](../../SOURCES.md)
 
+---
+
+## 1. Genel Bakış ve Mimari Felsefesi
+
+**TM Molavi Agentic OS**, bağımlılık yükü yüksek ve kırılgan çerçevelere alternatif olarak **Taghi Molavi** tarafından geliştirilmiş açık kaynaklı, modelden bağımsız bir yapay zekâ ajanı işletim sistemidir.
+
+Sistem beş temel mühendislik ilkesine dayanır:
+1. **Önce Ücretsiz Model Stratejisi (Free-First):** Yerel açık ağırlıklı modelleri (Ollama: Llama 3.2, Mistral) ve sıfır maliyetli bulut katmanlarını (Groq, Gemini Free Tier) önceliklendirerek **0.00$** marjinal maliyetle çalışır.
+2. **Permission-Slip İnsan Onay Mekanizması:** E-posta gönderimi, veritabanı değişiklikleri veya kod dağıtımı gibi hassas işlemler `L2_HUMAN_APPROVAL` düzeyinde durdurulur ve kriptografik HMAC imzalı onay bileti üretilir.
+3. **Foreman Doğrulama Kapısı (Tahmin Yasaktır):** Hiçbir ajan, somut ve doğrulanabilir bir kanıt çıktısı üretmeden bir görevi "tamamlandı" olarak işaretleyemez.
+4. **Bumblebee MCP Güvenliği:** Tehlikeli kabuk komutlarını (`rm -rf`, `curl | bash`), dizin geçiş açıklarını ve istem enjeksiyonlarını (Prompt Injection) engelleyen statik ve dinamik denetim motoru.
+5. **Çoklu Çalışma Zamanı Adaptörleri:** **Hermes Main**, **Hermes Personal Desktop**, **Antigravity IDE**, **OpenAI Codex / Cursor** ve **Claude Code** için doğrudan dışa aktarım desteği.
+
+---
+
+## 2. Kurulum ve Başlangıç
+
+### PyPI Üzerinden Kurulum:
+```bash
+pip install molavi-agentic-os
+```
+
+### Kaynak Koddan Geliştirici Kurulumu:
 ```bash
 git clone https://github.com/tmolavi/molavi-agentic-os.git
 cd molavi-agentic-os
-pip install -e .
+pip install -e ".[dev]"
+```
 
-# Tüm ajanların Bot-Ready skorunu doğrula
+### CLI ile Doğrulama ve Listeleme:
+```bash
+# Bot-Ready Doğrulaması (100/100 Puan)
 molavi-agentic-os validate
 
-# Ekosistem bileşenlerini listele
+# Ekosistem Bileşenlerini Listele
 molavi-agentic-os list all
+
+# Platformlara Dışa Aktar
+molavi-agentic-os install --platform hermes --agent research-agent
+molavi-agentic-os install --platform hermes-desktop --agent developer-agent
+molavi-agentic-os install --platform antigravity --agent content-writer
+molavi-agentic-os install --platform codex --agent seo-auditor
 ```
 
 ---
 
-## 3. Marka Konumlandırması
+## 3. Ekosistem Entegrasyonu
 
-* **Proje Sahibi:** Taqi Molavi
-* **Uzmanlık:** Yapay Zeka Mimarisi | SEO & GEO Stratejisi
-* **Felsefe:** Görünür Ol. Daha İyi Sat. Otorite Kur. (Be Visible. Sell Better. Build Authority.)
-* **Web Sitesi:** [molavi.pro](https://molavi.pro)
+Bu sistem, tmolavi ekosistemindeki diğer açık kaynaklı araçlarla doğrudan entegredir:
+- [`tm-second-brain`](https://github.com/tmolavi/tm-second-brain): Yerel Markdown ve Obsidian tabanlı kalıcı ajan hafızası.
+- [`geo-scope`](https://github.com/tmolavi/geo-scope): Yapay zekâ cevap motorlarında görünürlük ve atıf benchmarkı.
+- [`sage-audit`](https://github.com/tmolavi/sage-audit): Teknik SEO, AEO ve şema denetim motoru.
+- [`siteprobe`](https://github.com/tmolavi/siteprobe): Otomatik web sitesi tarayıcısı ve kod düzeltici.
+- [`humanize-ai-copywriter`](https://github.com/tmolavi/humanize-ai-copywriter): Sıfır entropili insani metin yazarlığı motoru.
+
+---
+
+## 4. Testler ve Doğrulama
+
+```bash
+pytest -v
+python scripts/check_governance.py
+```
+
+---
+
+## 5. Lisans
+
+Bu proje **MIT Lisansı** altında lisanslanmıştır. Telif Hakkı (c) 2026 **Taghi Molavi**.

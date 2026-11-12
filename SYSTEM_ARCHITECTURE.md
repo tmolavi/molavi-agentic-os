@@ -44,3 +44,13 @@ Every agent in TM AI Agent Toolkit passes the strict 100-point Bot-Ready validat
 * **Orchestration Concurrency:** Thread-safe parallel execution up to system worker limit without external Redis/Celery daemons.
 * **SQLite Memory:** Zero-latency embedded episodic and state persistence.
 * **Token Redaction:** Sub-millisecond secret scrubbing for logs and API payloads.
+
+---
+
+## 4. Memory & Knowledge Infrastructure (`tm-second-brain`)
+
+`molavi-agentic-os` integrates with [`tm-second-brain`](https://github.com/tmolavi/tm-second-brain) as its **Memory & Knowledge Infrastructure** layer:
+
+* **Non-Destructive `HamzadBridge`:** Connects `SQLiteMemoryStore` (`MemoryInterface`) to local-first Obsidian-compatible Markdown vaults without duplicating memory engines or mutating production databases.
+* **Model-Agnostic MCP & Harness Adapters:** Exposes `memory_search`, `memory_recall`, `memory_expand`, `memory_remember`, `memory_correct`, and `memory_health` over stdio JSON-RPC for Hermes, Claude Code, Codex, Gemini CLI, OpenCode, Goose, and Antigravity.
+* **Environment Isolation:** Enforces separate namespaces and vaults across `Hamzad Core`, `Main Hermes`, `Hermes Personal Desktop (Finland Server)`, and `Hermes Personal Desktop (Mac Local)`.
