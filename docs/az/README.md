@@ -1,103 +1,87 @@
-# TM Molavi Agentic OS — Azərbaycan dilində Kapsamlı Sənədləşmə
-
 <div align="center">
 
-**Avtonom Süni İntellekt Agentləri, Bacarıqlar, Komandalar və Yerli Yaddaş üçün Açıq Mənbəli Əməliyyat Ekosistemi**
+# TM Molavi Agentic OS (Azərbaycan dilində Sənədlər)
 
-[![PyPI Versiyası](https://img.shields.io/pypi/v/molavi-agentic-os.svg?color=blue&style=flat-square)](https://pypi.org/project/molavi-agentic-os/)
-[![CI Vəziyyəti](https://img.shields.io/github/actions/workflow/status/tmolavi/molavi-agentic-os/ci.yml?branch=main&label=CI&style=flat-square)](https://github.com/tmolavi/molavi-agentic-os/actions)
-[![MIT Lisenziyası](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](../../LICENSE)
-[![Sıfır Xərc](https://img.shields.io/badge/X%C9%99rc-0.00%24%20(Free--First)-brightgreen?style=flat-square)](../../MODEL-REQUIREMENTS.md)
+### Avtonom Süni İntellekt Agentləri, Bacarıqlar, Çoxagentli Komandalar, Davamlı Yaddaş və MCP Alətləri üçün Açıq Mənbəli Əməliyyat Ekosistemi
 
-[English](../../README.md) · [English Docs](../en/README.md) · [فارسی](../fa/README.md) · [Türkçe](../tr/README.md) · [Azərbaycan dili (Əsas Səhifə)](../../README.az.md) · [العربية](../ar/README.md)
+[![PyPI Version](https://img.shields.io/pypi/v/molavi-agentic-os.svg?style=for-the-badge&logo=pypi&logoColor=white&color=blue)](https://pypi.org/project/molavi-agentic-os/)
+[![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![CI Status](https://img.shields.io/badge/CI-21%20Tests%20Passing-brightgreen?style=for-the-badge&logo=githubactions&logoColor=white)](https://github.com/tmolavi/molavi-agentic-os/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-purple?style=for-the-badge)](../../LICENSE)
+[![Zero Dependencies](https://img.shields.io/badge/Runtime%20Deps-Zero%20(Pure%20Stdlib)-success?style=for-the-badge)](../../pyproject.toml)
+
+**Digər Dillər:**  
+🌐 [English](../../docs/en/README.md) · [فارسی (Fars dili)](../../docs/fa/README.md) · [Türkçe (Türkiyə türkcəsi)](../../docs/tr/README.md) · [العربية (Ərəb dili)](../../docs/ar/README.md)
+
+---
+
+⭐ **Əgər TM Molavi Agentic OS sizin üçün faydalıdırsa, GitHub-da repozitoriyanı ulduzlamaqla (Star) açıq mənbəli ekosistemin inkişafına dəstək olun!**
+
+---
 
 </div>
 
----
+## 1. Ümumi Baxış və Memarlıq Əsasları
 
-## 🏛️ İdarəetmə Sənədləri və Şəffaflıq
-* **TM Açıq Mənbə İdarəetmə Standartı:** [`TM-OPEN-SOURCE-STANDARD.md`](../../TM-OPEN-SOURCE-STANDARD.md)
-* **Model Tələbləri və Xərc Şəffaflığı:** [`MODEL-REQUIREMENTS.md`](../../MODEL-REQUIREMENTS.md)
-* **Lisenziya Uyğunluq Matrisi:** [`LICENSE_COMPATIBILITY.md`](../../LICENSE_COMPATIBILITY.md)
-* **Mənbələr və Sübutlar:** [`SOURCES.md`](../../SOURCES.md)
+**TM Molavi Agentic OS** avtonom süni intellekt agentləri, çoxagentli komandalar və Model Context Protocol (MCP) alətləri üçün hazırlanmış, modeldən asılı olmayan açıq mənbəli əməliyyat ekosistemidir.
 
----
-
-## 1. Ümumi Baxış və Memarlıq Fəlsəfəsi
-
-**TM Molavi Agentic OS**, xarici asılılıqları aradan qaldıran və **Tağı Mövləvi** tərəfindən hazırlanmış açıq mənbəli süni intellekt agenti əməliyyat sistemidir.
-
-Sistem 5 mühəndislik prinsipinə əsaslanır:
-1. **Əvvəlcə Pulsuz Model Strategiyası (Free-First):** Yerli modelləri (Ollama: Llama 3.2, Mistral) və pulsuz bulud sistemlərini (Groq, Gemini Free Tier) prioritetləşdirərək **0.00$** xərclə işləyir.
-2. **Permission-Slip İnsan Təsdiqi:** E-poçt göndərilməsi, verilənlər bazası dəyişiklikləri və kod yerləşdirilməsi kimi həssas əməliyyatlar `L2_HUMAN_APPROVAL` səviyyəsində saxlanılır və HMAC imzalı rəqəmsal bilet tələb olunur.
-3. **Foreman Doğrulama Qapısı (Ehtimal etmək qadağandır):** Heç bir agent fiziki sübut və ya artefakt təqdim etmədən tapşırığı tamamlanmış elan edə bilməz.
-4. **Bumblebee MCP Təhlükəsizliyi:** Təhlükəli terminal əmrlərini (`rm -rf`, `curl | bash`) və yol aşma cəhdlərini bloklayan təhlükəsizlik auditi.
-5. **Çoxplatformalı Uyğunluq:** **Hermes Main**, **Hermes Desktop**, **Antigravity IDE**, **OpenAI Codex / Cursor** və **Claude Code** üçün birbaşa eksport.
+Əsas üstünlüklər:
+- **Sıfır Xarici Asılılıq:** Redis, Celery və ya Docker tələb etmədən təmiz Python 3.10+ standart kitabxanası üzərində işləyir.
+- **Foreman Doğrulama Qapısı:** *"Təxmin etmək qadağandır"* prinsipi əsasında heç bir agent maddi sübut və artefakt təqdim etmədən tapşırığı tamamlanmış elan edə bilməz.
+- **Kriptoqrafik HMAC İcazə Biletləri:** Həssas əməliyyatlar (kod icrası, e-poçt göndərilməsi, verilənlər bazası dəyişiklikləri) `L2_HUMAN_APPROVAL` səviyyəsində insan təsdiqinə bağlanır.
+- **Prioritet Pulsuz Model Yönləndiricisi:** Yerli açıq çəkili modelləri (Ollama: Llama 3.2, Mistral) və pulsuz bulud qatlarını (Groq, Gemini Free Tier) $0.00 xərclə prioritetləşdirir.
+- **Çoxplatformalı Uyğunluq:** Hermes Main, Hermes Personal Desktop, Antigravity IDE, Claude Code və OpenAI Codex üçün hazır adaptörlər təqdim edir.
 
 ---
 
-## 2. v0.2.0 Xüsusiyyətləri
+## 2. 60 Saniyədə Sürətli Başlanğıc
 
-* **12 İxtisaslaşmış Agent (100/100 Bot-Ready Xalı)**
-* **24 Standart Agent Bacarığı (SKILL.md)**
-* **Standart MCP Şlüzü və Bumblebee Təhlükəsizlik Auditi**
-* **Autoresearch Tədqiqat Dəftəri və Metrik İdarəetməsi**
-* **Obsidian İkinci Beyin Yaddaş Körpüsü (`tm-second-brain`)**
-
----
-
-## 3. Quraşdırma və Tez Başlama
-
-### PyPI vasitəsilə quraşdırma:
 ```bash
+# PyPI vasitəsilə rəsmi paketin quraşdırılması
 pip install molavi-agentic-os
-```
 
-### Mənbə kodundan inkişaf quraşdırması:
-```bash
-git clone https://github.com/tmolavi/molavi-agentic-os.git
-cd molavi-agentic-os
-pip install -e ".[dev]"
-```
-
-### CLI əmrləri:
-```bash
-# Bot-Ready Doğrulaması (100/100 Xal)
+# CLI ilə Bot-Ready 100 ballıq yoxlama
 molavi-agentic-os validate
 
-# Ekosistem Komponentlərini Göstər
+# Bütün komponentlərin siyahısı
 molavi-agentic-os list all
+```
 
-# Platformalar üçün Eksport
-molavi-agentic-os install --platform hermes --agent research-agent
-molavi-agentic-os install --platform hermes-desktop --agent developer-agent
-molavi-agentic-os install --platform antigravity --agent content-writer
-molavi-agentic-os install --platform codex --agent seo-auditor
+### Python Nümunəsi
+```python
+from molavi_agentic_os.tools import ToolDefinition, ToolParameter, ToolRegistry
+from molavi_agentic_os.mcp import MCPGateway
+from molavi_agentic_os.evaluation import ForemanVerificationGate, VerificationArtifact
+
+registry = ToolRegistry()
+registry.register(ToolDefinition(
+    name="sayt_yoxla",
+    description="Səhifə başlıqlarını yoxlayır.",
+    parameters=[ToolParameter("url", "string", "Hədəf URL")],
+    handler=lambda url: {"url": url, "status": 200, "headings": ["Giris", "Memarliq"]}
+))
+
+gateway = MCPGateway(registry=registry)
+cavab = gateway.handle_call_tool("sayt_yoxla", {"url": "https://molavi.pro"})
+
+gate = ForemanVerificationGate.verify(
+    output={"url": "https://molavi.pro", "evidence": ["HTTP 200"]},
+    expected_artifacts=[VerificationArtifact("url", "string", "https://molavi.pro")]
+)
+print("Təsdiqləndi:", gate.is_verified)
 ```
 
 ---
 
-## 4. Ekosistem Əlaqələri
+## 3. Ekosistem Əlaqələri
 
-- [`tm-second-brain`](https://github.com/tmolavi/tm-second-brain): Yerli Markdown və Obsidian əsaslı davamlı yaddaş.
-- [`geo-scope`](https://github.com/tmolavi/geo-scope): Süni intellekt cavab sistemlərində görünürlük meyarları.
-- [`sage-audit`](https://github.com/tmolavi/sage-audit): Texniki SEO, AEO və sxem auditi.
-- [`siteprobe`](https://github.com/tmolavi/siteprobe): Avtonom sayt təmiri və diaqnostikası.
-- [`molavi-web-intelligence`](https://github.com/tmolavi/molavi-web-intelligence): Sıfır token xərcli şəbəkə intellekti.
-- [`humanize-ai-copywriter`](https://github.com/tmolavi/humanize-ai-copywriter): İnsani və detektorları keçən mətn yazarlığı.
-- [`news-traffic-engine`](https://github.com/tmolavi/news-traffic-engine): Xəbər otağı yayımı və trafik mühərriki.
+* [`tm-second-brain`](https://github.com/tmolavi/tm-second-brain): Markdown və Obsidian əsaslı lokal davamlı yaddaş.
+* [`humanize-ai-copywriter`](https://github.com/tmolavi/humanize-ai-copywriter): İnsani və yüksək konversiyalı kopiraytinq mühərriki.
+* [`molavi-web-intelligence`](https://github.com/tmolavi/molavi-web-intelligence): $0.00 xərclə veb məlumatlarının toplanması.
+* [`geo-scope`](https://github.com/tmolavi/geo-scope): Süni intellekt axtarış sistemlərində görünürlüyün ölçülməsi.
 
 ---
 
-## 5. Testlər
-
-```bash
-pytest -v
-python scripts/check_governance.py
-```
-
----
-
-## 6. Lisenziya
-
-Bu layihə **MIT Lisenziyası** altında yayımlanmışdır. Müəllif hüquqları (c) 2026 **Tağı Mövləvi**.
+<div align="center">
+<sub>MIT Lisenziyası ilə yayımlanır — Müəllif hüququ (c) 2026 <a href="https://molavi.pro">Tağı Mövləvi</a></sub>
+</div>

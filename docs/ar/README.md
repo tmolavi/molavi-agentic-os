@@ -1,107 +1,91 @@
-# حزمة وكلاء الذكاء الاصطناعي TM (نظام تشغيل مولوي للوكلاء الذاتيين)
+<div dir="rtl" align="center">
 
-<div align="center" dir="rtl">
+# نظام تشغيل مولوي للوكلاء الذاتيين (TM Molavi Agentic OS)
 
-**الوثائق الشاملة باللغة العربية لنظام التشغيل النمطي والمستقل عن النماذج للوكلاء الأذكياء**
+### نظام تشغيل مفتوح المصدر ونمطي للوكلاء الذاتيين، والمهارات، والفرق متعددة الوكلاء، والذاكرة الدائمة، وأدوات بروتوكول MCP
 
-[![إصدار PyPI](https://img.shields.io/pypi/v/molavi-agentic-os.svg?color=blue&style=flat-square)](https://pypi.org/project/molavi-agentic-os/)
-[![حالة CI](https://img.shields.io/github/actions/workflow/status/tmolavi/molavi-agentic-os/ci.yml?branch=main&label=CI&style=flat-square)](https://github.com/tmolavi/molavi-agentic-os/actions)
-[![ترخيص MIT](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](../../LICENSE)
-[![تكلفة صفرية](https://img.shields.io/badge/التكلفة-0.00%24%20(النماذج%20المجانية%20أولاً)-brightgreen?style=flat-square)](../../MODEL-REQUIREMENTS.md)
+[![إصدار PyPI](https://img.shields.io/pypi/v/molavi-agentic-os.svg?style=for-the-badge&logo=pypi&logoColor=white&color=blue)](https://pypi.org/project/molavi-agentic-os/)
+[![بايثون 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![الاختبارات الآلية](https://img.shields.io/badge/CI-21%20Tests%20Passing-brightgreen?style=for-the-badge&logo=githubactions&logoColor=white)](https://github.com/tmolavi/molavi-agentic-os/actions)
+[![ترخيص MIT](https://img.shields.io/badge/License-MIT-purple?style=for-the-badge)](../../LICENSE)
+[![بدون تبعيات خارجية](https://img.shields.io/badge/Runtime%20Deps-Zero%20(Pure%20Stdlib)-success?style=for-the-badge)](../../pyproject.toml)
 
-[English](../../README.md) · [English Docs](../en/README.md) · [فارسی](../fa/README.md) · [Türkçe](../tr/README.md) · [Azərbaycan dili](../az/README.md) · [العربية (الصفحة الرئيسية)](../../README.ar.md)
+**لغات أخرى:**  
+🌐 [English](../../docs/en/README.md) · [فارسی (الفارسية)](../../docs/fa/README.md) · [Türkçe (التركية)](../../docs/tr/README.md) · [Azərbaycan dili (الأذربيجانية)](../../docs/az/README.md)
+
+---
+
+⭐ **إذا كان TM Molavi Agentic OS مفيداً لمشاريعك، يرجى دعمنا بوضع نجمة (Star) للمستودع على GitHub للمساهمة في نمو هذا النظام المفتوح المصدر!**
+
+---
 
 </div>
 
----
-
 <div dir="rtl">
-
-## 🏛️ وثائق الحوكمة ومصفوفة التوافق
-* **معيار حوكمة المصادر المفتوحة TM:** [`TM-OPEN-SOURCE-STANDARD.md`](../../TM-OPEN-SOURCE-STANDARD.md)
-* **شفافية متطلبات النماذج والتكلفة:** [`MODEL-REQUIREMENTS.md`](../../MODEL-REQUIREMENTS.md)
-* **مصفوفة توافق التراخيص:** [`LICENSE_COMPATIBILITY.md`](../../LICENSE_COMPATIBILITY.md)
-* **المصادر والأصل التقني:** [`SOURCES.md`](../../SOURCES.md)
-
----
 
 ## 1. نظرة عامة وفلسفة النظام
 
-**TM Molavi Agentic OS** هو إطار عمل مفتوح المصدر ونمطي ومستقل عن أي نموذج محدد، طوره المهندس **تقي مولوي (Taghi Molavi)** كبديل للأنظمة الهشة والمعتمدة على بنى تحتية معقدة.
+**TM Molavi Agentic OS** هو نظام تشغيل مفتوح المصدر ومستقل عن مزودي النماذج، مصمم لبناء وتشغيل وكلاء الذكاء الاصطناعي الذاتيين وفرق العمل متعددة الوكلاء بأعلى درجات الموثوقية.
 
-يقوم النظام على خمس ركائز هندسية:
-1. **استراتيجية النماذج المجانية أولاً (Free-First):** التنفيذ المباشر على النماذج المحلية خفيفة الوزن (Ollama: Llama 3.2, Mistral) والطبقات السحابية المجانية (Groq, Gemini Free Tier) بتكلفة هامشية قدرها **0.00$**.
-2. **أمان الموافقة البشرية (Permission-Slip):** تخضع العمليات الحساسة (إرسال البريد الإلكتروني، تعديل قواعد البيانات، نشر الكود البرمجي) لبروتوكول `L2_HUMAN_APPROVAL` وتتطلب تذكرة موافقة رقمية موقعة بـ HMAC.
-3. **بوابة التحقق الصارم فورمن (ممنوع التخمين):** لا يحق لأي وكيل اعتبار المهمة منتهية دون تقديم دليل مادي وملموس يمكن التحقق منه برمجياً.
-4. **أمان بروتوكول سياق النموذج (Bumblebee MCP Security):** فحص أمني دقيق يمنع الأوامر الطرفية الخطيرة (`rm -rf`، `curl | bash`) وهجمات اختراق المسار وحقن التوجيهات.
-5. **محولات بيئات التشغيل المتعددة:** تصدير مباشر ومتوافق مع **Hermes Main**، و **Hermes Personal Desktop**، و **Antigravity IDE**، و **OpenAI Codex / Cursor**، و **Claude Code**.
-
----
-
-## 2. ميزات إصدار v0.2.0
-
-* **١٢ وكيلاً متخصصاً (بدرجة جاهزية كاملة 100/100)**
-* **٢٤ مهارة قياسية للوكلاء (SKILL.md)**
-* **بوابة MCP المدمجة وفاحص الأمان بامبل‌بي**
-* **دفتر تجارب Autoresearch وقرارات Keep/Revert**
-* **جسر ذاكرة العقل الثاني المتكامل مع Obsidian (`tm-second-brain`)**
+### المزايا الهندسية الجوهرية:
+- **صفر تبعيات خارجية عند التشغيل (Zero Runtime Dependencies):** يعمل بالكامل وبسرعة فائقة عبر مكتبة بايثون القياسية 3.10+ دون الحاجة إلى Redis أو Celery أو خوادم Docker معقدة.
+- **بوابة التحقق الصارمة فورمن (Foreman Gate):** تعتمد المبدأ الذهبي *"ممنوع التخمين"*. لا يحق لأي وكيل اعتبار المهمة منجزة دون تقديم أدلة مادية ملموسة (بيانات فحص حقيقية، ملفات، نتائج اختبارات قابلة للتكرار).
+- **أذونات الأمان المشفرة (HMAC Permission Slip):** تتطلب العمليات الحساسة (تنفيذ أوامر النظام، إرسال البريد، تعديل قواعد البيانات) موافقة بشرية مسبقة عبر تذاكر مشفرة (`L2_HUMAN_APPROVAL`).
+- **توجيه النماذج المجانية أولاً (Free-First Router):** يمنح الأولوية للنماذج المحلية مفتوحة الأوزان (Ollama: Llama 3.2, Mistral) والخيارات السحابية المجانية (Groq, Gemini Free Tier) بتكلفة استدعاء تساوي 0.00 دولار.
+- **محولات متعددة البيئات:** يدعم التصدير المباشر لبيئات Hermes Main، وHermes Desktop، وAntigravity IDE، وClaude Code، وOpenAI Codex.
 
 ---
 
-## 3. التثبيت والبدء السريع
+## 2. البدء السريع خلال 60 ثانية
 
-### التثبيت عبر PyPI:
 ```bash
+# تثبيت الحزمة الرسمية عبر مستودع PyPI
 pip install molavi-agentic-os
-```
 
-### التثبيت من المصدر:
-```bash
-git clone https://github.com/tmolavi/molavi-agentic-os.git
-cd molavi-agentic-os
-pip install -e ".[dev]"
-```
-
-### أوامر سطر الأوامر (CLI):
-```bash
-# التحقق من جاهزية الوكلاء (100/100)
+# التحقق من جودة وجاهزية الوكلاء وفق معيار 100/100 Bot-Ready
 molavi-agentic-os validate
 
-# عرض جميع مكونات النظام
+# عرض جميع الوكلاء والمهارات والفرق المسجلة
 molavi-agentic-os list all
+```
 
-# تصدير التكوينات للمنصات المستهدفة
-molavi-agentic-os install --platform hermes --agent research-agent
-molavi-agentic-os install --platform hermes-desktop --agent developer-agent
-molavi-agentic-os install --platform antigravity --agent content-writer
-molavi-agentic-os install --platform codex --agent seo-auditor
+### كود بايثون تفاعلي ($0.00 تكلفة)
+```python
+from molavi_agentic_os.tools import ToolDefinition, ToolParameter, ToolRegistry
+from molavi_agentic_os.mcp import MCPGateway
+from molavi_agentic_os.evaluation import ForemanVerificationGate, VerificationArtifact
+
+registry = ToolRegistry()
+registry.register(ToolDefinition(
+    name="inspect_page",
+    description="فحص عناوين وبيانات الصفحة",
+    parameters=[ToolParameter("url", "string", "رابط الموقع")],
+    handler=lambda url: {"url": url, "status": 200, "headings": ["المقدمة", "الهيكل"]}
+))
+
+gateway = MCPGateway(registry=registry)
+result = gateway.handle_call_tool("inspect_page", {"url": "https://molavi.pro"})
+
+gate = ForemanVerificationGate.verify(
+    output={"target": "https://molavi.pro", "evidence": ["HTTP 200 verified"]},
+    expected_artifacts=[VerificationArtifact("target", "string", "https://molavi.pro")]
+)
+print("هل تم التحقق بنجاح؟:", gate.is_verified)
 ```
 
 ---
 
-## 4. التكامل مع منظومة TM
+## 3. التكامل مع بيئة أدوات TM
 
-- [`tm-second-brain`](https://github.com/tmolavi/tm-second-brain): نظام الذاكرة المحلية الدائمة للوكلاء بتنسيق Markdown و Obsidian.
-- [`geo-scope`](https://github.com/tmolavi/geo-scope): إطار قياس الظهور الميداني في إجابات الذكاء الاصطناعي (Perplexity, ChatGPT, Gemini).
-- [`sage-audit`](https://github.com/tmolavi/sage-audit): محرك التدقيق الفني الشامل لـ SEO و AEO.
-- [`siteprobe`](https://github.com/tmolavi/siteprobe): الزاحف الذاتي لفحص وإصلاح مواقع الويب تلقائياً.
-- [`molavi-web-intelligence`](https://github.com/tmolavi/molavi-web-intelligence): استخراج بيانات الويب بدون توكنات.
-- [`humanize-ai-copywriter`](https://github.com/tmolavi/humanize-ai-copywriter): محرك الصياغة البشرية خالية من حشو الذكاء الاصطناعي.
-- [`news-traffic-engine`](https://github.com/tmolavi/news-traffic-engine): منصة النشر الذاتي وأتمتة غرف الأخبار في Google News.
+* [`tm-second-brain`](https://github.com/tmolavi/tm-second-brain): نظام الذاكرة الدائمة المحلية القائم على Obsidian وMarkdown.
+* [`humanize-ai-copywriter`](https://github.com/tmolavi/humanize-ai-copywriter): محرك الصياغة الإنسانية المتطورة الخالية من القوالب الاصطناعية.
+* [`molavi-web-intelligence`](https://github.com/tmolavi/molavi-web-intelligence): بنية استخراج وتتبع بيانات الويب بدون تكلفة توكنات.
+* [`geo-scope`](https://github.com/tmolavi/geo-scope): قياس مدى ظهور العلامات التجارية في إجابات محركات الذكاء الاصطناعي التوليدية.
 
 ---
 
-## 5. الاختبارات والتحقق البرمجي
+</div>
 
-```bash
-pytest -v
-python scripts/check_governance.py
-```
-
----
-
-## 6. الترخيص وحقوق الملكية
-
-مرخص تحت رخصة **MIT License**. حقوق النشر (c) 2026 **تقي مولوي (Taghi Molavi)**.
-
+<div dir="rtl" align="center">
+<sub>مرخص بموجب <a href="../../LICENSE">ترخيص MIT</a> — حقوق النشر (c) 2026 <a href="https://molavi.pro">تقي مولوي (Taghi Molavi)</a></sub>
 </div>

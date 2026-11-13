@@ -1,193 +1,220 @@
-# TM Molavi Agentic OS — English Documentation
+# TM Molavi Agentic OS — Complete Documentation (English)
 
-<p align="center">
-  <strong>An Open-Source, Modular Operating Ecosystem for Autonomous AI Agents, Skills, Multi-Agent Teams, Workflows, Memory & Cross-Runtime Execution.</strong><br>
-  <em>Build Smarter Agents. Orchestrate Better Teams. Automate Production Systems with Verifiable Proof.</em>
-</p>
-
-<p align="center">
-  <a href="https://pypi.org/project/molavi-agentic-os/"><img src="https://img.shields.io/pypi/v/molavi-agentic-os.svg?color=blue&style=flat-square" alt="PyPI Version"></a>
-  <a href="https://github.com/tmolavi/molavi-agentic-os/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/tmolavi/molavi-agentic-os/ci.yml?branch=main&label=CI&style=flat-square" alt="CI Status"></a>
-  <a href="../../LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?style=flat-square" alt="License: MIT"></a>
-  <a href="../../MODEL-REQUIREMENTS.md"><img src="https://img.shields.io/badge/Cost-$0.00%20Marginal%20(Free--First)-brightgreen?style=flat-square" alt="Cost: $0.00"></a>
-  <a href="https://molavi.pro"><img src="https://img.shields.io/badge/Architect-Taghi%20Molavi-orange?style=flat-square" alt="Taghi Molavi"></a>
-</p>
+Welcome to the comprehensive technical documentation for **TM Molavi Agentic OS** (`molavi-agentic-os`).
 
 ---
 
-## 🌍 Language Navigation
-- [English (Root)](../../README.md)
-- [English (Full Docs)](README.md)
-- [فارسی (Persian)](../fa/README.md)
-- [Türkçe (Turkish)](../tr/README.md)
-- [Azərbaycan dili (Azerbaijani)](../az/README.md)
-- [العربية (Arabic)](../ar/README.md)
+## Table of Contents
+1. [Project Overview & Philosophy](#1-project-overview--philosophy)
+2. [System Architecture & Engines](#2-system-architecture--engines)
+3. [Installation & Requirements](#3-installation--requirements)
+4. [Configuration (.env & Model Tiers)](#4-configuration-env--model-tiers)
+5. [Quick Start & Basic Usage](#5-quick-start--basic-usage)
+6. [Runtime Platform Adapters](#6-runtime-platform-adapters)
+7. [Skill Development Guide](#7-skill-development-guide)
+8. [Agent Development Guide](#8-agent-development-guide)
+9. [Team & Workflow Topologies](#9-team--workflow-topologies)
+10. [Security & Human Approval (Permission Slip)](#10-security--human-approval-permission-slip)
+11. [Evaluation & Autoresearch Loops](#11-evaluation--autoresearch-loops)
+12. [Troubleshooting & FAQ](#12-troubleshooting--faq)
+13. [License & Third-Party Notices](#13-license--third-party-notices)
 
 ---
 
 ## 1. Project Overview & Philosophy
 
-**TM Molavi Agentic OS** is an open-source, model-agnostic operating framework developed under the **TM (Taghi Molavi) Open Source ecosystem**.
+**TM Molavi Agentic OS** is an open-source, modular, model-agnostic operating framework for autonomous AI agents, multi-agent teams, persistent memory, and Model Context Protocol (MCP) tools.
 
-Unlike fragile prompt libraries or heavy monolithic agent runtimes that depend on massive infrastructure (Redis, Celery, Docker daemons, or mandatory cloud subscriptions), TM Molavi Agentic OS provides a **zero-dependency, local-first architecture**:
-
-1. **Free-First Model Routing:** Runs natively on local open-weight models (Ollama: Llama 3.2, Mistral) and zero-cost cloud tiers (Groq, Gemini Free Tier) before escalating to paid commercial APIs.
-2. **Permission-Slip Security (`L2_HUMAN_APPROVAL`):** All sensitive operations (sending emails, database mutations, code deployments, trade executions) require cryptographically signed HMAC approval tickets.
-3. **Foreman Anti-Hallucination Gate:** Golden Rule: *"It is not allowed to guess."* Agents cannot declare a task complete without tangible, verifiable artifact evidence.
-4. **Bumblebee MCP Security:** Static analysis of tool definitions and dynamic inspection of invocation arguments to eliminate prompt injections, unsafe shell executions (`rm -rf`, `curl | bash`), and path traversals.
-5. **Cross-Runtime Adapters:** Native export and bidirectional interoperability with **Hermes Main**, **Hermes Personal Desktop**, **Antigravity IDE**, **OpenAI Codex / Cursor**, and **Claude Code**.
-
----
-
-## 2. Core System Architecture
-
-```
-┌────────────────────────────────────────────────────────────────────────┐
-│                        TM MOLAVI AGENTIC OS                            │
-├────────────────────────────────────────────────────────────────────────┤
-│  Runtime Adapters:                                                     │
-│  [Hermes Main]  [Hermes Desktop]  [Antigravity IDE]  [Codex / Cursor]  │
-├────────────────────────────────────────────────────────────────────────┤
-│  Multi-Agent Teams & Canonical Workflows:                              │
-│  • SEO & GEO Research Team         • Autonomous Research Loop          │
-│  • AI Search Visibility Team       • Multi-Agent Handoff Pipeline      │
-│  • Content Production Team         • Failure Recovery & Retries        │
-│  • Lead Generation & Outreach      • Security & Audit Verification     │
-├────────────────────────────────────────────────────────────────────────┤
-│  Specialist Agents (100/100 Bot-Ready Score):                          │
-│  [Research Agent] [SEO Auditor] [GEO Auditor] [AI Visibility Analyst]  │
-│  [Content Strategist] [Content Writer] [Fact Checker] [Code Reviewer]  │
-│  [Developer Agent] [Marketing Analyst] [Lead Researcher] [PM Agent]    │
-├────────────────────────────────────────────────────────────────────────┤
-│  Orchestration & Verification Subsystems:                              │
-│  • Permission-Slip HMAC Human Approval Gatekeeper                      │
-│  • Foreman 'No-Guessing' Artifact Verification Gate                    │
-│  • Thread-Safe TaskQueue & DAG Runner (Zero Celery / Redis required)   │
-│  • TM Second Brain Adapter (Markdown/Obsidian Vault Memory)            │
-│  • Bumblebee MCP Gateway & Tool Security Auditor                       │
-│  • Autoresearch Experiment Loop & Metric Ledger                        │
-└────────────────────────────────────────────────────────────────────────┘
-```
+### Core Principles
+1. **Zero External Runtime Dependencies:** Runs on pure Python 3.10+ standard library.
+2. **Free-First Model Routing:** Local open-weight models (Ollama: Llama 3.2, Mistral) and zero-cost cloud tiers (Groq, Gemini Free Tier) at $0.00 marginal cost.
+3. **Foreman Anti-Hallucination Gate:** *"It is not allowed to guess."* Agents must provide verifiable artifact evidence.
+4. **Cryptographic HMAC Security:** Sensitive operations require `L2_HUMAN_APPROVAL` tokens.
+5. **Universal Portability:** Native adapters for Hermes Main, Hermes Personal Desktop, Antigravity IDE, Claude Code, and OpenAI Codex.
 
 ---
 
-## 3. Installation & Packaging
+## 2. System Architecture & Engines
 
-### Option A: Install from PyPI
+The ecosystem is organized into decoupled, independently testable modules:
+* `core/`: Agent definitions, skill specifications, team topologies, and validation contracts.
+* `tools/` & `mcp/`: JSON-Schema tool registry, stdio MCP gateway, and Bumblebee security auditor.
+* `memory/`: SQLite episodic store, fast working scratchpad, and TM Second Brain Markdown vault bridge.
+* `security/`: Permission-slip HMAC approval tickets and prompt injection guardrails.
+* `providers/`: Free-first model router with quota management and graceful fallback.
+* `evaluation/`: Output evaluator, Foreman artifact gate, and Karpathy-inspired Autoresearch loop.
+* `adapters/`: Runtime export adapters for Hermes, Antigravity, Claude Code, and Codex.
+
+---
+
+## 3. Installation & Requirements
+
+### Requirements
+* Python 3.10 or higher
+* No mandatory cloud infrastructure, external databases, or Docker daemons.
+
+### Installation via PyPI
 ```bash
 pip install molavi-agentic-os
 ```
 
-### Option B: Local Editable Installation
+### Installation from Source
 ```bash
 git clone https://github.com/tmolavi/molavi-agentic-os.git
 cd molavi-agentic-os
-pip install -e ".[dev]"
-```
-
-### Build Distributions Locally
-```bash
-python setup.py sdist bdist_wheel
+pip install -e .
 ```
 
 ---
 
-## 4. Configuration (`.env.example`)
+## 4. Configuration (.env & Model Tiers)
 
-Copy the configuration template to `.env`:
+Copy the configuration template:
 ```bash
 cp .env.example .env
 ```
-Key configuration parameters:
-- `TM_HMAC_SECRET_KEY`: Minimum 32-character secret key for signing approval tickets.
-- `OLLAMA_BASE_URL`: Local Ollama daemon URL (default: `http://localhost:11434`).
-- `GROQ_API_KEY`: Optional free-tier Groq API key.
-- `GEMINI_API_KEY`: Optional free-tier Google Gemini key.
-- `TM_SECOND_BRAIN_VAULT_PATH`: Path to your local Markdown/Obsidian memory vault.
+
+Configure your preferred parameters:
+* `TM_APPROVAL_HMAC_SECRET`: 32+ character key for cryptographic approval tokens.
+* `OLLAMA_HOST`: Local Ollama URL (default: `http://localhost:11434`).
+* `TM_BRAIN_VAULT_PATH`: Local path to Markdown/Obsidian memory vault.
 
 ---
 
-## 5. Quickstart & CLI Commands
+## 5. Quick Start & Basic Usage
 
-### 1. Validate All Agents & Skills (100/100 Bot-Ready Score)
-```bash
-molavi-agentic-os validate
+```python
+from molavi_agentic_os.tools import ToolDefinition, ToolParameter, ToolRegistry
+from molavi_agentic_os.mcp import MCPGateway
+from molavi_agentic_os.evaluation import ForemanVerificationGate, VerificationArtifact
+
+registry = ToolRegistry()
+registry.register(ToolDefinition(
+    name="system_summary",
+    description="Returns system metrics.",
+    parameters=[ToolParameter("target", "string", "System target name")],
+    handler=lambda target: {"target": target, "status": "active", "load": 0.12}
+))
+
+gateway = MCPGateway(registry=registry)
+call_res = gateway.handle_call_tool("system_summary", {"target": "agent-cluster"})
+print(call_res)
 ```
 
-### 2. List Ecosystem Components
-```bash
-molavi-agentic-os list all
-```
+---
 
-### 3. Export Agent for Target Runtimes
+## 6. Runtime Platform Adapters
+
+Export agents, skills, and teams to your development environment:
 ```bash
-# Export for Hermes Main
+# Export for Hermes Agent
 molavi-agentic-os install --platform hermes --agent research-agent
 
 # Export for Antigravity IDE
 molavi-agentic-os install --platform antigravity --agent developer-agent
 
-# Export for Codex / Cursor
+# Export for OpenAI Codex / Cursor
 molavi-agentic-os install --platform codex --agent seo-auditor
+
+# Export for Claude Code
+molavi-agentic-os install --platform claude-code --agent content-writer
 ```
 
 ---
 
-## 6. Runtime Integrations
+## 7. Skill Development Guide
 
-### A. Hermes Main & Hermes Desktop
-- **Hermes Main:** Distributed agent orchestration, remote tool invocation over WebSocket / stdio.
-- **Hermes Desktop:** Local process sandboxing, personal file access boundaries, and local `.tm-brain` Obsidian memory integration.
+Every skill is defined as a `SKILL.md` document with structured YAML frontmatter:
+```markdown
+---
+name: Skill Name
+description: Clear, action-oriented description.
+category: orchestration | development | research | seo | geo | security
+version: 1.0.0
+author: Author Name
+license: MIT
+---
 
-### B. Antigravity IDE
-- Surgical coding agent behaviors, automated test verification, and project-level `.gemini/` instruction export.
+# Skill Title
+...
+```
 
-### C. Codex & Claude Code
-- Strict schema adherence, `.cursorrules` and `CLAUDE.md` compatibility, and least-privilege tool execution.
+Run validation:
+```bash
+molavi-agentic-os validate
+```
 
 ---
 
-## 7. Memory & Knowledge Infrastructure (`tm-second-brain`)
+## 8. Agent Development Guide
 
-TM Molavi Agentic OS natively connects to [`tm-second-brain`](https://github.com/tmolavi/tm-second-brain):
-- Local-first Markdown files with YAML frontmatter.
-- Non-destructive conflict resolution with append-only `.audit_log.jsonl`.
-- Environment isolation across namespaces (`hamzad-core`, `hermes-main`, `hermes-desktop`).
+Agents are defined in YAML or Python using `AgentDefinition`:
+* Explicit role and purpose (>15 characters).
+* Deterministic JSON input/output schemas.
+* Minimum of 2 execution boundaries.
+* Permission level (`L0_READ_ONLY`, `L1_DRAFT_RECOMMEND`, `L2_HUMAN_APPROVAL`, `L3_PRE_AUTHORIZED`).
 
 ---
 
-## 8. Security & Human Approval Model
+## 9. Team & Workflow Topologies
 
-All high-privilege actions default to **L2_HUMAN_APPROVAL**:
+Support for 5 multi-agent team configurations:
+1. **SEO & GEO Research Team:** Coordinator, SEO Auditor, GEO Auditor, Fact-Checker.
+2. **AI Visibility Audit Team:** Analyst, Prompt Researcher, Citability Scorer.
+3. **Software Development Team:** PM Agent, Developer Agent, Code Reviewer.
+4. **Content Production Team:** Strategist, Humanized Writer, Fact-Checker.
+5. **B2B Lead Generation Team:** ICP Researcher, Marketing Analyst, Human Approval Gatekeeper.
+
+---
+
+## 10. Security & Human Approval (Permission Slip)
+
+All sensitive actions require HMAC-signed approval tickets:
 ```python
 from molavi_agentic_os.security import ApprovalManager
 
-mgr = ApprovalManager(secret_key="your-secure-secret-key")
+mgr = ApprovalManager(secret_key="secure-key")
 ticket = mgr.create_ticket(
     action="send_email",
-    reason="Outreach to prospective enterprise partner",
-    target="partner@enterprise.com",
+    reason="Outreach to partner",
+    target="partner@example.com",
     impact="External email communication",
     risk="HIGH"
 )
-print(f"Ticket ID: {ticket.ticket_id} | Status: {ticket.status.value}")
 ```
 
 ---
 
-## 9. Troubleshooting & Governance
+## 11. Evaluation & Autoresearch Loops
 
-Run the automated governance suite to verify 100% compliance:
-```bash
-python scripts/check_governance.py
-```
-Run the full test suite:
-```bash
-pytest -v
+Inspired by Andrej Karpathy's Autoresearch:
+```python
+from molavi_agentic_os.evaluation import AutoresearchLoop, ResearchHypothesis
+
+hypothesis = ResearchHypothesis(
+    id="EXP-01",
+    target_component="prompt_engineering",
+    hypothesis_statement="Lower temperature to 0.2",
+    baseline_metric=0.65,
+    target_metric_key="accuracy"
+)
+loop = AutoresearchLoop(hypothesis)
 ```
 
 ---
 
-## 10. Upstream Sources & License
+## 12. Troubleshooting & FAQ
 
-Distributed under the **MIT License**. For complete provenance regarding Karpathy Autoresearch, Nanochat, Sebastian Raschka's LLMs from Scratch, Composio Awesome Claude Skills, and Perplexity Bumblebee, consult [`SOURCES.md`](../../SOURCES.md) and [`LICENSE_COMPATIBILITY.md`](../../LICENSE_COMPATIBILITY.md).
+* **ModuleNotFoundError:** Ensure package is installed via `pip install -e .`.
+* **Tests Failing:** Run `python3 -m pytest tests/ -v`.
+* **Missing Secrets:** TM Molavi Agentic OS defaults to local models and mock providers. No secrets required for tests.
+
+---
+
+## 13. License & Third-Party Notices
+
+Licensed under the **MIT License**. For complete provenance, upstream references, and license compatibility, see:
+* [`LICENSE`](../../LICENSE)
+* [`LICENSE_COMPATIBILITY.md`](../../LICENSE_COMPATIBILITY.md)
+* [`SOURCES.md`](../../SOURCES.md)
+* [`THIRD_PARTY_NOTICES.md`](../../THIRD_PARTY_NOTICES.md)
