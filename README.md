@@ -18,7 +18,7 @@
 pip install molavi-agentic-os
 ```
 
-[English](README.md) · [Full Documentation](docs/en/README.md) · [فارسی (Persian)](docs/fa/README.md) · [Türkçe (Turkish)](docs/tr/README.md) · [Azərbaycan dili](docs/az/README.md) · [العربية (Arabic)](docs/ar/README.md)
+[English](README.md) · [فارسی (Persian)](README.fa.md) · [Türkçe (Turkish)](README.tr.md) · [Azərbaycan dili](README.az.md) · [العربية (Arabic)](README.ar.md) · [Detailed Docs](docs/en/README.md)
 
 <br/>
 

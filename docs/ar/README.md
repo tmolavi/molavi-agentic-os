@@ -1,21 +1,21 @@
 # حزمة وكلاء الذكاء الاصطناعي TM (نظام تشغيل مولوي للوكلاء الذاتيين)
 
-<div align="center">
+<div align="center" dir="rtl">
 
-**نظام تشغيل مفتوح المصدر ونمطي ومستقل عن النماذج للوكلاء الذاتيين، والمهارات، والفرق متعددة الوكلاء، والذاكرة المحلية، والتنفيذ عبر منصات متعددة**  
-*ابنِ وكلاء أكثر ذكاءً. شكّل فرق عمل أكثر كفاءة. أتمت مهامك الحقيقية بأدلة تجريبية قابلة للتحقق وبدون أي تخمين.*
+**الوثائق الشاملة باللغة العربية لنظام التشغيل النمطي والمستقل عن النماذج للوكلاء الأذكياء**
 
 [![إصدار PyPI](https://img.shields.io/pypi/v/molavi-agentic-os.svg?color=blue&style=flat-square)](https://pypi.org/project/molavi-agentic-os/)
 [![حالة CI](https://img.shields.io/github/actions/workflow/status/tmolavi/molavi-agentic-os/ci.yml?branch=main&label=CI&style=flat-square)](https://github.com/tmolavi/molavi-agentic-os/actions)
 [![ترخيص MIT](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](../../LICENSE)
 [![تكلفة صفرية](https://img.shields.io/badge/التكلفة-0.00%24%20(النماذج%20المجانية%20أولاً)-brightgreen?style=flat-square)](../../MODEL-REQUIREMENTS.md)
-[![مهندس النظام](https://img.shields.io/badge/تقي%20مولوي-Molavi.pro-orange?style=flat-square)](https://molavi.pro)
 
-[English (Root)](../../README.md) · [English (Docs)](../en/README.md) · [فارسی](../fa/README.md) · [Türkçe](../tr/README.md) · [Azərbaycan dili](../az/README.md) · [العربية](README.md)
+[English](../../README.md) · [English Docs](../en/README.md) · [فارسی](../fa/README.md) · [Türkçe](../tr/README.md) · [Azərbaycan dili](../az/README.md) · [العربية (الصفحة الرئيسية)](../../README.ar.md)
 
 </div>
 
 ---
+
+<div dir="rtl">
 
 ## 🏛️ وثائق الحوكمة ومصفوفة التوافق
 * **معيار حوكمة المصادر المفتوحة TM:** [`TM-OPEN-SOURCE-STANDARD.md`](../../TM-OPEN-SOURCE-STANDARD.md)
@@ -38,7 +38,17 @@
 
 ---
 
-## 2. التثبيت والبدء السريع
+## 2. ميزات إصدار v0.2.0
+
+* **١٢ وكيلاً متخصصاً (بدرجة جاهزية كاملة 100/100)**
+* **٢٤ مهارة قياسية للوكلاء (SKILL.md)**
+* **بوابة MCP المدمجة وفاحص الأمان بامبل‌بي**
+* **دفتر تجارب Autoresearch وقرارات Keep/Revert**
+* **جسر ذاكرة العقل الثاني المتكامل مع Obsidian (`tm-second-brain`)**
+
+---
+
+## 3. التثبيت والبدء السريع
 
 ### التثبيت عبر PyPI:
 ```bash
@@ -69,17 +79,19 @@ molavi-agentic-os install --platform codex --agent seo-auditor
 
 ---
 
-## 3. التكامل مع منظومة TM
+## 4. التكامل مع منظومة TM
 
 - [`tm-second-brain`](https://github.com/tmolavi/tm-second-brain): نظام الذاكرة المحلية الدائمة للوكلاء بتنسيق Markdown و Obsidian.
 - [`geo-scope`](https://github.com/tmolavi/geo-scope): إطار قياس الظهور الميداني في إجابات الذكاء الاصطناعي (Perplexity, ChatGPT, Gemini).
 - [`sage-audit`](https://github.com/tmolavi/sage-audit): محرك التدقيق الفني الشامل لـ SEO و AEO.
 - [`siteprobe`](https://github.com/tmolavi/siteprobe): الزاحف الذاتي لفحص وإصلاح مواقع الويب تلقائياً.
+- [`molavi-web-intelligence`](https://github.com/tmolavi/molavi-web-intelligence): استخراج بيانات الويب بدون توكنات.
 - [`humanize-ai-copywriter`](https://github.com/tmolavi/humanize-ai-copywriter): محرك الصياغة البشرية خالية من حشو الذكاء الاصطناعي.
+- [`news-traffic-engine`](https://github.com/tmolavi/news-traffic-engine): منصة النشر الذاتي وأتمتة غرف الأخبار في Google News.
 
 ---
 
-## 4. الاختبارات والتحقق البرمجي
+## 5. الاختبارات والتحقق البرمجي
 
 ```bash
 pytest -v
@@ -88,6 +100,8 @@ python scripts/check_governance.py
 
 ---
 
-## 5. الترخيص وحقوق الملكية
+## 6. الترخيص وحقوق الملكية
 
 مرخص تحت رخصة **MIT License**. حقوق النشر (c) 2026 **تقي مولوي (Taghi Molavi)**.
+
+</div>

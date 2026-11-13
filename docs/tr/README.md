@@ -1,17 +1,15 @@
-# TM Molavi Agentic OS — Türkçe Dokümantasyon
+# TM Molavi Agentic OS — Türkçe Kapsamlı Dokümantasyon
 
 <div align="center">
 
-**Otonom Yapay Zekâ Ajanları, Beceriler, Çoklu Ajan Ekipleri, Yerel Bellek ve Platformlar Arası Çalıştırma için Açık Kaynaklı, Modüler İşletim Ekosistemi**  
-*Daha akıllı ajanlar geliştirin. Daha yetkin ekipler kurun. Üretim sistemlerini somut kanıtlarla otomatikleştirin.*
+**Otonom Yapay Zekâ Ajanları, Beceriler, Ekipler ve Yerel Bellek için Açık Kaynaklı Modüler İşletim Ekosistemi**
 
 [![PyPI Sürümü](https://img.shields.io/pypi/v/molavi-agentic-os.svg?color=blue&style=flat-square)](https://pypi.org/project/molavi-agentic-os/)
 [![CI Durumu](https://img.shields.io/github/actions/workflow/status/tmolavi/molavi-agentic-os/ci.yml?branch=main&label=CI&style=flat-square)](https://github.com/tmolavi/molavi-agentic-os/actions)
 [![MIT Lisansı](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](../../LICENSE)
 [![Sıfır Maliyet](https://img.shields.io/badge/Maliyet-0.00%24%20(Free--First)-brightgreen?style=flat-square)](../../MODEL-REQUIREMENTS.md)
-[![Mimar](https://img.shields.io/badge/Mimar-Taghi%20Molavi-orange?style=flat-square)](https://molavi.pro)
 
-[English (Root)](../../README.md) · [English (Docs)](../en/README.md) · [فارسی](../fa/README.md) · [Türkçe](README.md) · [Azərbaycan dili](../az/README.md) · [العربية](../ar/README.md)
+[English](../../README.md) · [English Docs](../en/README.md) · [فارسی](../fa/README.md) · [Türkçe (Kök Sayfa)](../../README.tr.md) · [Azərbaycan dili](../az/README.md) · [العربية](../ar/README.md)
 
 </div>
 
@@ -38,7 +36,22 @@ Sistem beş temel mühendislik ilkesine dayanır:
 
 ---
 
-## 2. Kurulum ve Başlangıç
+## 2. v0.2.0 Sürüm Özellikleri
+
+* **12 Uzman Ajan (100/100 Bot-Ready Puanı):**
+  - `research-agent`, `seo-auditor`, `geo-auditor`, `ai-visibility-analyst`, `content-strategist`, `content-writer`, `fact-checker`, `code-reviewer`, `developer-agent`, `marketing-analyst`, `lead-researcher`, `project-manager`.
+* **24 Standart Ajan Becerisi (SKILL.md):**
+  - Ajan mühendisliği, kod inceleme, depo analizi, web taraması, belge analizi, SEO, GEO, arama görünürlüğü, sistematik hata ayıklama, Bumblebee MCP denetimi, otonom deney değerlendirmesi ve araştırma döngüsü.
+* **MCP Ağ Geçidi ve Güvenlik Denetçisi:**
+  - JSON Şeması doğrulaması ve güvenli yürütme sınırları.
+* **Autoresearch Deney Defteri:**
+  - Otomatik Keep/Revert kararları ile metrik optimizasyonu.
+* **İkinci Beyin Bellek Köprüsü (`tm-second-brain`):**
+  - YAML başlıklı yerel Markdown hafızası.
+
+---
+
+## 3. Kurulum ve Başlangıç
 
 ### PyPI Üzerinden Kurulum:
 ```bash
@@ -69,18 +82,20 @@ molavi-agentic-os install --platform codex --agent seo-auditor
 
 ---
 
-## 3. Ekosistem Entegrasyonu
+## 4. Ekosistem Entegrasyonu
 
 Bu sistem, tmolavi ekosistemindeki diğer açık kaynaklı araçlarla doğrudan entegredir:
 - [`tm-second-brain`](https://github.com/tmolavi/tm-second-brain): Yerel Markdown ve Obsidian tabanlı kalıcı ajan hafızası.
 - [`geo-scope`](https://github.com/tmolavi/geo-scope): Yapay zekâ cevap motorlarında görünürlük ve atıf benchmarkı.
 - [`sage-audit`](https://github.com/tmolavi/sage-audit): Teknik SEO, AEO ve şema denetim motoru.
 - [`siteprobe`](https://github.com/tmolavi/siteprobe): Otomatik web sitesi tarayıcısı ve kod düzeltici.
+- [`molavi-web-intelligence`](https://github.com/tmolavi/molavi-web-intelligence): Sıfır jeton maliyetli ağ tarayıcısı.
 - [`humanize-ai-copywriter`](https://github.com/tmolavi/humanize-ai-copywriter): Sıfır entropili insani metin yazarlığı motoru.
+- [`news-traffic-engine`](https://github.com/tmolavi/news-traffic-engine): Otonom haber odası yayıncılığı ve trafik motoru.
 
 ---
 
-## 4. Testler ve Doğrulama
+## 5. Testler ve Doğrulama
 
 ```bash
 pytest -v
@@ -89,6 +104,6 @@ python scripts/check_governance.py
 
 ---
 
-## 5. Lisans
+## 6. Lisans
 
 Bu proje **MIT Lisansı** altında lisanslanmıştır. Telif Hakkı (c) 2026 **Taghi Molavi**.

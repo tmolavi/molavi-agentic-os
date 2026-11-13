@@ -1,40 +1,38 @@
-# تولکیت ایجنت‌های هوش مصنوعی TM (مولوی ایجنتیک او‌اس)
+# سیستم عامل ایجنت‌های هوش مصنوعی مولوی (TM Molavi Agentic OS)
 
-<div align="center">
+<div align="center" dir="rtl">
 
-**اکوسیستم متن‌باز، ماژولار و مستقل از مدل برای ایجنت‌های خودمختار، مهارت‌ها، تیم‌های چند ایجنتی، حافظه محلی و اجرای چند پلتفرمی**  
-*ایجنت‌های هوشمندانه‌تر بسازید. تیم‌های کارآمدتر تشکیل دهید. کارهای واقعی را با شواهد تجربی و بدون توهم خودکار کنید.*
+**مستندات جامع فارسی سیستم‌عامل ماژولار و مستقل از مدل برای ایجنت‌های هوش مصنوعی**
 
 [![نسخه PyPI](https://img.shields.io/pypi/v/molavi-agentic-os.svg?color=blue&style=flat-square)](https://pypi.org/project/molavi-agentic-os/)
 [![وضعیت CI](https://img.shields.io/github/actions/workflow/status/tmolavi/molavi-agentic-os/ci.yml?branch=main&label=CI&style=flat-square)](https://github.com/tmolavi/molavi-agentic-os/actions)
 [![مجوز MIT](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](../../LICENSE)
-[![هزینه صفر مارجینال](https://img.shields.io/badge/هزینه-۰.۰۰%20دلار%20(اولین%20مدل%20رایگان)-brightgreen?style=flat-square)](../../MODEL-REQUIREMENTS.md)
-[![معمار سیستم](https://img.shields.io/badge/تقی%20مولوی-Molavi.pro-orange?style=flat-square)](https://molavi.pro)
+[![هزینه صفر](https://img.shields.io/badge/هزینه-۰.۰۰%20دلار%20(اولین%20مدل%20رایگان)-brightgreen?style=flat-square)](../../MODEL-REQUIREMENTS.md)
 
-[English (Root)](../../README.md) · [English (Docs)](../en/README.md) · [فارسی](README.md) · [Türkçe](../tr/README.md) · [Azərbaycan dili](../az/README.md) · [العربية](../ar/README.md)
+[English](../../README.md) · [English Docs](../en/README.md) · [فارسی (صفحه اصلی)](../../README.fa.md) · [Türkçe](../tr/README.md) · [Azərbaycan dili](../az/README.md) · [العربية](../ar/README.md)
 
 </div>
 
 ---
 
-## 🏛️ اسناد حاکمیتی، سازگاری لایسنس و استانداردها
+<div dir="rtl">
+
+## 🏛️ اسناد حاکمیتی و مراجع فنی
 * **سند استاندارد حاکمیت متن‌باز TM:** [`TM-OPEN-SOURCE-STANDARD.md`](../../TM-OPEN-SOURCE-STANDARD.md)
 * **شفافیت مصرف توکن و مدل‌های رایگان:** [`MODEL-REQUIREMENTS.md`](../../MODEL-REQUIREMENTS.md)
 * **ماتریس سازگاری لایسنس و منابع بالادستی:** [`LICENSE_COMPATIBILITY.md`](../../LICENSE_COMPATIBILITY.md)
-* **موجودی و برنامه مهاجرت مخازن ۲۴گانه:** [`docs/repository-governance/EXISTING-REPOSITORIES.md`](../repository-governance/EXISTING-REPOSITORIES.md)
+* **منابع و شواهد فنی:** [`SOURCES.md`](../../SOURCES.md)
 
 ---
 
-## ۱. معرفی و فلسفه پروژه
+## ۱. معرفی و فلسفه معماری
 
-**TM Molavi Agentic OS** یک فریم‌ورک متن‌باز، ماژولار و مستقل از مدل است که تحت اکوسیستم متن‌باز **TM (تقی مولوی - Taqi Molavi)** برای سیستم‌های ایجنتیک پیشرفته و توزیع‌شده طراحی شده است.
+**TM Molavi Agentic OS** یک سیستم‌عامل جامع، ماژولار و مدل‌آگنوستیک است که توسط **تقی مولوی (Taghi Molavi)** برای استقرار ایجنت‌های هوشمند در محیط‌های واقعی مهندسی شده است. برخلاف کتابخانه‌های شکننده پرامپت یا سیستم‌های سنگین وابسته به ابر، این سیستم بر پایه ۵ ستون اصلی استوار است:
 
-برخلاف پرامپت‌لیست‌های تبلیغاتی یا فریم‌ورک‌های سنگین و شکننده‌ای که برای کار کردن نیازمند زیرساخت‌های سرسام‌آور (دیمون‌های Redis، Celery، داکر و سرویس‌های ابری پولی) هستند، **مولوی ایجنتیک او‌اس** بر پایه پنج اصل مهندسی استوار است:
-
-۱. **استراتژی اولویت مدل‌های رایگان (Free-First):** اجرای کامل روی مدل‌های سبک محلی (Ollama: Llama 3.2, Mistral) و سرویس‌های پرسرعت رایگان (Groq, Gemini Free Tier) با هزینه حاشیه‌ای **۰.۰۰ دلار**.
-۲. **امنیت تضمین‌شده با تایید انسانی (Permission-Slip):** توقف عملیات حساس (ارسال ایمیل، انتشار محتوا، تغییرات دیتابیس، استقرار کد) طبق پروتکل `L2_HUMAN_APPROVAL` و صدور تیکت‌های امضاشده کریپتوگرافیک با کلید HMAC.
+۱. **استراتژی اولویت مدل‌های رایگان (Free-First):** اجرای کامل و رایگان روی اولاما (Ollama Llama 3.2 و Mistral) و تپ‌های ابری رایگان پرسرعت (Groq و Gemini Free Tier) با هزینه حاشیه‌ای **۰.۰۰ دلار**.
+۲. **امنیت تایید انسانی (Permission-Slip):** توقف عملیات حساس (ارسال ایمیل، تغییرات پایگاه داده، استقرار کد) طبق پروتکل `L2_HUMAN_APPROVAL` و صدور تیکت‌های امضاشده کریپتوگرافیک با کلید HMAC.
 ۳. **گیت راستی‌آزمایی فورمن (قانون طلایی: حدس زدن ممنوع):** هیچ ایجنتی حق ندارد تسک را «انجام شد» علامت بزند مگر اینکه آرتیفکت و شواهد تجربی و فیزیکی تولید کرده باشد.
-۴. **امنیت MCP با الهام از پروژه بامبل‌بی (Bumblebee Security):** بازرسی ایستا و پویای ابزارها و دستورات خطرناک ترمینال (`rm -rf`، `curl | bash`)، مهار نفوذ به مسیرهای حساس و دفاع در برابر تزریق پرامپت (Prompt Injection).
+۴. **امنیت MCP با الهام از پروژه بامبل‌بی:** بازرسی ایستا و پویای ابزارها و دستورات خطرناک ترمینال (`rm -rf`، `curl | bash`)، مهار نفوذ به مسیرهای حساس و دفاع در برابر تزریق پرامپت.
 ۵. **سازگاری چندپلتفرمی و آداپتورهای اختصاصی:** خروجی مستقیم و سازگاری دوجانبه با **Hermes Main**، **Hermes Personal Desktop**، **Antigravity IDE**، **OpenAI Codex / Cursor** و **Claude Code**.
 
 ---
@@ -133,3 +131,5 @@ python scripts/check_governance.py
 ## ۶. لایسنس و حقوق مالکیت فکری
 
 این پروژه تحت مجوز **MIT License** توسط **تقی مولوی (Taghi Molavi)** منتشر شده است. کلیه ایده‌های الهام‌گرفته از مراجع بالادستی با رعایت کامل حقوق معنوی و بر اساس استانداردهای بازطراحی پاکیزه (Clean-Room Adaptation) مستند شده‌اند.
+
+</div>
