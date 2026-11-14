@@ -6,7 +6,7 @@
 
 [![PyPI Version](https://img.shields.io/pypi/v/molavi-agentic-os.svg?style=for-the-badge&logo=pypi&logoColor=white&color=blue)](https://pypi.org/project/molavi-agentic-os/)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![CI Status](https://img.shields.io/badge/CI-21%20Tests%20Passing-brightgreen?style=for-the-badge&logo=githubactions&logoColor=white)](https://github.com/tmolavi/molavi-agentic-os/actions)
+[![CI Status](https://img.shields.io/badge/CI-25%20Tests%20Passing-brightgreen?style=for-the-badge&logo=githubactions&logoColor=white)](https://github.com/tmolavi/molavi-agentic-os/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-purple?style=for-the-badge)](LICENSE)
 [![Zero External Dependencies](https://img.shields.io/badge/Runtime%20Deps-Zero%20(Pure%20Stdlib)-success?style=for-the-badge)](pyproject.toml)
 [![Foreman Gate](https://img.shields.io/badge/Anti--Hallucination-Foreman%20Verified-gold?style=for-the-badge)](SYSTEM_ARCHITECTURE.md)
@@ -42,6 +42,7 @@ Most current multi-agent frameworks (CrewAI, AutoGPT, LangGraph) struggle with t
 **TM Molavi Agentic OS solves this with a lightweight, model-agnostic operating standard:**
 - **Zero External Runtime Dependencies:** Runs everywhere on pure Python 3.10+ standard library.
 - **Foreman Verification Gate:** Strict enforcement of the golden rule: *"It is not allowed to guess."* An agent cannot mark a task complete without tangible evidence artifacts.
+- **4 Independent Review Personas & Doubt-Driven Development:** Multi-agent adversarial evaluation (Code Reviewer, Security Auditor, Test Engineer, Web Performance Auditor) inspecting non-trivial branching and changes before code stands.
 - **Permission-Slip Cryptographic Security:** Sensitive operations (shell execution, external emails, data mutation) require HMAC-signed approval tickets (`L2_HUMAN_APPROVAL`).
 - **Free-First Model Routing:** Prioritizes local open-weight models (Ollama: Llama 3.2, Mistral) and zero-cost cloud tiers (Groq, Gemini Free Tier) at $0.00 marginal cost.
 - **Cross-Platform Adapters:** Native export for Hermes Main, Hermes Personal Desktop, Antigravity IDE, Claude Code, and OpenAI Codex.

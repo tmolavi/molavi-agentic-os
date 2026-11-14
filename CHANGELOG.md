@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [0.3.0] — 2026-11-14
+
+### Added
+* **4 Independent Review Personas:** Introduced dedicated review specialist agents in `agents/development/`:
+  * `code-reviewer`: Principal code quality, SOLID design, readability, and cyclomatic complexity.
+  * `security-auditor`: Adversarial threat auditor targeting OWASP Top 10, secret detection, and dependency audits.
+  * `test-engineer`: Staff Quality & TDD engineer enforcing boundary value coverage and mock verification.
+  * `web-performance-auditor`: Staff Web Performance auditor enforcing Core Web Vitals (LCP, INP, CLS) and token efficiency.
+* **Independent Engineering Review Team:** Added `teams/independent-engineering-review-team.json` coordinating non-colluding reviews across all 4 personas before commit sign-off.
+* **Doubt-Driven & Spec-Driven Workflows:** Added `workflows/doubt-driven-adversarial-review.json` and `workflows/spec-driven-development-flow.json`.
+* **High-Rigor Engineering Skills:** Added `spec-driven-development`, `doubt-driven-development`, `constraint-driven-development`, and `anti-rationalization-rules` to `skills/development/`.
+* **Automated Review & Gate Test Suite:** Added `tests/test_independent_reviews_and_gates.py` bringing total passed tests to 25.
+
+---
+
 ## [0.2.0] — 2026-11-13
 
 ### Added
