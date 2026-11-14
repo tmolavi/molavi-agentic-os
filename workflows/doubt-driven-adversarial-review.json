@@ -1,0 +1,56 @@
+{
+  "id": "doubt-driven-adversarial-review",
+  "name": "Doubt-Driven Adversarial Review Workflow",
+  "description": "Applies fresh-context adversarial review to non-trivial architectural changes and branching logic before code stands.",
+  "trigger": "on_nontrivial_code_change",
+  "steps": [
+    {
+      "step_id": "extract_diff",
+      "agent_id": "project-manager",
+      "action": "git_diff_extractor",
+      "inputs": {
+        "scope": "staged_changes"
+      }
+    },
+    {
+      "step_id": "adversarial_doubt_review",
+      "agent_id": "code-reviewer",
+      "action": "doubt_examination",
+      "inputs": {
+        "candidate_solution": "$steps.extract_diff.output",
+        "posture": "disprove_assumptions"
+      }
+    },
+    {
+      "step_id": "security_audit",
+      "agent_id": "security-auditor",
+      "action": "ast_security_scan",
+      "inputs": {
+        "diff": "$steps.extract_diff.output"
+      }
+    },
+    {
+      "step_id": "test_verification",
+      "agent_id": "test-engineer",
+      "action": "verify_test_coverage",
+      "inputs": {
+        "diff": "$steps.extract_diff.output"
+      }
+    },
+    {
+      "step_id": "compile_verdict",
+      "agent_id": "project-manager",
+      "action": "verdict_compiler",
+      "inputs": {
+        "doubt_findings": "$steps.adversarial_doubt_review.output",
+        "security_findings": "$steps.security_audit.output",
+        "test_findings": "$steps.test_verification.output"
+      }
+    }
+  ],
+  "quality_gate": {
+    "require_zero_critical_security_flaws": true,
+    "require_test_pass": true,
+    "require_rebuttal_of_doubt": true
+  }
+}

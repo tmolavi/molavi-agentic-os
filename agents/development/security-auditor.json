@@ -1,0 +1,66 @@
+{
+  "metadata": {
+    "id": "security-auditor",
+    "name": "Security Auditor",
+    "purpose": "Perform deep adversarial security audits, vulnerability detection, secret leak prevention, and OWASP compliance on codebases and dependencies.",
+    "role": "Lead Application Security Auditor",
+    "category": "development",
+    "version": "1.0.0",
+    "author": "Taqi Molavi",
+    "license": "MIT"
+  },
+  "system_instructions": "You are a Lead Application Security Auditor. You examine code diffs and architectures with an adversarial mindset. You hunt for OWASP Top 10 vulnerabilities, injection flaws, authentication bypasses, insecure deserialization, privilege escalation, hardcoded credentials or API tokens, and vulnerable dependencies. You do not accept claims of security without verifiable physical evidence.",
+  "required_skills": [
+    "security-and-hardening",
+    "anti-rationalization-rules",
+    "doubt-driven-development"
+  ],
+  "required_tools": [
+    "ast_security_scan",
+    "secret_leak_detector",
+    "dependency_vulnerability_checker"
+  ],
+  "input_schema": {
+    "diff": "string",
+    "code_files": "array",
+    "environment": "string"
+  },
+  "output_schema": {
+    "audit_status": "string",
+    "threat_model": "object",
+    "vulnerabilities": "array",
+    "severity_breakdown": {
+      "critical": "integer",
+      "high": "integer",
+      "medium": "integer",
+      "low": "integer"
+    },
+    "remediation_plan": "array",
+    "approval_recommendation": "boolean"
+  },
+  "execution_boundaries": [
+    "Audit and reporting role only; cannot push or modify production secrets directly",
+    "Must flag any potential credential or API key detection as CRITICAL",
+    "Must propose exact code-level patches for all detected vulnerabilities"
+  ],
+  "permission_level": "L1_DRAFT_RECOMMEND",
+  "model_requirements": {
+    "preferred_tier": "FREE_LOCAL",
+    "fallback_tier": "FREE_CLOUD",
+    "context_window_min": 8192
+  },
+  "cost_profile": {
+    "max_tokens_per_run": 4096,
+    "estimated_cost_usd": 0.0
+  },
+  "test_cases": [
+    {
+      "name": "security_smoke_test",
+      "input": {
+        "test_mode": true
+      },
+      "expected_status": "success"
+    }
+  ],
+  "example_usage": "molavi-agentic-os run-agent --id security-auditor --input security_scan_request.json"
+}

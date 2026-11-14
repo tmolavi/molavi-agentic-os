@@ -1,0 +1,56 @@
+{
+  "id": "spec-driven-development-flow",
+  "name": "Spec-Driven Development Workflow",
+  "description": "Enforces specification, capability decomposition, and explicit constraints before code generation.",
+  "trigger": "on_feature_or_bugfix_request",
+  "steps": [
+    {
+      "step_id": "draft_specification",
+      "agent_id": "project-manager",
+      "action": "spec_drafter",
+      "inputs": {
+        "requirements": "$input.requirements",
+        "constraints": "$input.constraints"
+      }
+    },
+    {
+      "step_id": "constraint_audit",
+      "agent_id": "code-reviewer",
+      "action": "constraint_verifier",
+      "inputs": {
+        "spec": "$steps.draft_specification.output"
+      }
+    },
+    {
+      "step_id": "tdd_scaffolding",
+      "agent_id": "test-engineer",
+      "action": "generate_failing_tests",
+      "inputs": {
+        "spec": "$steps.draft_specification.output"
+      }
+    },
+    {
+      "step_id": "implementation",
+      "agent_id": "developer-agent",
+      "action": "implement_to_pass_tests",
+      "inputs": {
+        "spec": "$steps.draft_specification.output",
+        "tests": "$steps.tdd_scaffolding.output"
+      }
+    },
+    {
+      "step_id": "quality_signoff",
+      "agent_id": "project-manager",
+      "action": "verify_and_signoff",
+      "inputs": {
+        "spec": "$steps.draft_specification.output",
+        "implementation": "$steps.implementation.output"
+      }
+    }
+  ],
+  "quality_gate": {
+    "no_code_without_spec": true,
+    "failing_tests_first": true,
+    "zero_broken_constraints": true
+  }
+}

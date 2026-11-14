@@ -1,0 +1,81 @@
+{
+  "id": "independent-engineering-review-team",
+  "name": "Independent Engineering Review Team",
+  "purpose": "Subject all candidate code changes, architecture proposals, and pull requests to 4 independent, non-colluding review personas before merge.",
+  "coordinator": "project-manager",
+  "roles": [
+    {
+      "role_id": "coordinator",
+      "agent_id": "project-manager",
+      "title": "Review Coordinator",
+      "responsibilities": [
+        "Aggregate candidate changes",
+        "Dispatch diffs to independent personas",
+        "Compile unified verdict"
+      ],
+      "can_delegate_to": [
+        "code_reviewer",
+        "security_auditor",
+        "test_engineer",
+        "perf_auditor"
+      ]
+    },
+    {
+      "role_id": "code_reviewer",
+      "agent_id": "code-reviewer",
+      "title": "Principal Code Reviewer",
+      "responsibilities": [
+        "Audit readability, SOLID design, complexity, and maintainability"
+      ],
+      "can_delegate_to": []
+    },
+    {
+      "role_id": "security_auditor",
+      "agent_id": "security-auditor",
+      "title": "Security & Threat Auditor",
+      "responsibilities": [
+        "Hunt for injection, secret leaks, auth flaws, and dependency risks"
+      ],
+      "can_delegate_to": []
+    },
+    {
+      "role_id": "test_engineer",
+      "agent_id": "test-engineer",
+      "title": "Quality & Regression Engineer",
+      "responsibilities": [
+        "Verify TDD coverage, boundary values, and mock validity"
+      ],
+      "can_delegate_to": []
+    },
+    {
+      "role_id": "perf_auditor",
+      "agent_id": "web-performance-auditor",
+      "title": "Performance & Efficiency Auditor",
+      "responsibilities": [
+        "Profile latency, token overhead, memory leaks, and Core Web Vitals"
+      ],
+      "can_delegate_to": []
+    }
+  ],
+  "delegation_rules": [
+    "Coordinator sends unmodified candidate diff simultaneously to all 4 personas",
+    "Each persona evaluates independently without seeing peers' findings",
+    "Any CRITICAL finding from Security Auditor halts the promotion immediately",
+    "All personas must yield approval before final release sign-off"
+  ],
+  "execution_sequence": [
+    "coordinator",
+    "code_reviewer",
+    "security_auditor",
+    "test_engineer",
+    "perf_auditor",
+    "coordinator"
+  ],
+  "dependencies": [],
+  "review_process": "Strict independent review with anti-rationalization proof required",
+  "failure_handling": "halt_and_notify",
+  "approval_requirements": [
+    "Production deployments and main merges require human sign-off"
+  ],
+  "final_deliverable": "Unified 4-pillar review verdict and verified physical test evidence"
+}
