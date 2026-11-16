@@ -177,6 +177,7 @@ Every agent and skill in TM Molavi Agentic OS passes our strict 100-point **Bot-
 ### 24 Standardized Skills (`SKILL.md`)
 Includes specialized skills across 14 capability areas:
 * **Agent Engineering:** `skills/orchestration/agent-engineering`
+* **Agent Orchestration (AutoSwarm):** `skills/orchestration/tm-agent-orchestration`
 * **Repository Analysis:** `skills/development/repository-analysis`
 * **Document Intelligence:** `skills/research/document-intelligence`
 * **AI Search Visibility:** `skills/geo/ai-search-visibility`

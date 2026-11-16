@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [0.4.0] — 2026-11-16
+
+### Added
+* **AutoSwarm-Inspired Agent Orchestration (`tm-agent-orchestration`):** Added portable multi-agent orchestration skill under `skills/orchestration/tm-agent-orchestration/` enabling dynamic task delegation, parallel DAG execution, structured envelopes, secret redaction, and session recovery.
+* **TM Second Brain Interoperability:** Synchronized orchestration contracts and evidence records with `tm_second_brain.orchestration`.
+* **Multilingual Documentation Synchronization:** Updated English, Persian, Turkish, Azerbaijani, and Arabic documentation.
+
+---
+
 ## [0.3.0] — 2026-11-14
 
 ### Added

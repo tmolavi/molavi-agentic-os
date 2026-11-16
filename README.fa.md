@@ -252,7 +252,7 @@ molavi-agentic-os install --platform claude-code --agent project-manager
 
 | مخزن همکار | تخصص | نقطه اتصال با TM Agentic OS |
 |---|---|---|
-| [`tm-second-brain`](https://github.com/tmolavi/tm-second-brain) | زیرساخت حافظه محلی مارک‌داون و ابسیدین برای ایجنت‌ها | لایه حافظه پایدار بین‌سشنی با لجر تغییرات غیرمخرب. |
+| [`tm-second-brain`](https://github.com/tmolavi/tm-second-brain) | زیرساخت حافظه محلی و ارکستراسیون پرتابل ایجنت‌ها (`tm-agent-orchestration`) | لایه حافظه پایدار و پروتکل هماهنگی چندایجنت (AutoSwarm) بدون وابستگی خارجی. |
 | [`geo-scope`](https://github.com/tmolavi/geo-scope) | فریم‌ورک تجربی ارزیابی دیده‌شدن در چت‌بات‌های AI (Perplexity, Gemini, ChatGPT) | تأمین داده‌های واقعی استناد برای `geo-auditor`. |
 | [`sage-audit`](https://github.com/tmolavi/sage-audit) | موتور ممیزی ۳ ستونه سئو، AEO و اسکیما | تغذیه کدهای بررسی فنی به `seo-auditor`. |
 | [`siteprobe`](https://github.com/tmolavi/siteprobe) | خزنده و ابزار اتونوموس پایش و اصلاح کد و کانفیگ وب‌سایت | اعمال خودکار پچ‌های فنی بر اساس گزارش‌های ایجنت‌ها. |

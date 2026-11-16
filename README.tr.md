@@ -212,7 +212,7 @@ molavi-agentic-os install --platform claude-code --agent project-manager
 
 | Depo | Uzmanlık Alanı | TM Agentic OS ile Entegrasyonu |
 |---|---|---|
-| [`tm-second-brain`](https://github.com/tmolavi/tm-second-brain) | Ajanlar için Yerel Markdown ve Obsidian Bellek Altyapısı | Oturumlar arası kalıcı hafıza ve denetim günlüğü katmanı. |
+| [`tm-second-brain`](https://github.com/tmolavi/tm-second-brain) | Ajanlar için Yerel Bellek ve Taşınabilir Orkestrasyon (`tm-agent-orchestration`) | Oturumlar arası kalıcı hafıza ve AutoSwarm esintili çoklu ajan koordinasyon protokolü. |
 | [`geo-scope`](https://github.com/tmolavi/geo-scope) | Yapay Zekâ Cevap Motorlarında (Perplexity, ChatGPT) Görünürlük Çerçevesi | `geo-auditor` için gerçek atıf verisi sağlar. |
 | [`sage-audit`](https://github.com/tmolavi/sage-audit) | 3 Sütunlu Teknik SEO, AEO ve Şema Denetim Motoru | `seo-auditor` içine teknik denetim rutinlerini besler. |
 | [`siteprobe`](https://github.com/tmolavi/siteprobe) | Otonom Web Sitesi Tarayıcısı ve Kod/Yapılandırma Onarıcısı | Teşhis raporlarına göre otomatik düzeltme yamalarını uygular. |

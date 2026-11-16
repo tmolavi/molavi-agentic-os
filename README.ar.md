@@ -220,7 +220,7 @@ molavi-agentic-os install --platform claude-code --agent project-manager
 
 | المستودع | التخصص الدقيق | آلية التكامل مع TM Agentic OS |
 |---|---|---|
-| [`tm-second-brain`](https://github.com/tmolavi/tm-second-brain) | بنية الذاكرة الدائمة للوكلاء بـ Markdown و Obsidian | طبقة الذاكرة الدائمة بين الجلسات مع سجل تدقيق غير مدمر. |
+| [`tm-second-brain`](https://github.com/tmolavi/tm-second-brain) | بنية الذاكرة الدائمة وتنسيق الوكلاء المحمول (`tm-agent-orchestration`) | طبقة الذاكرة الدائمة وبروتوكول تنسيق الوكلاء المستوحى من AutoSwarm بدون تبعيات خارجية. |
 | [`geo-scope`](https://github.com/tmolavi/geo-scope) | إطار قياس الظهور الميداني في إجابات محركات الذكاء الاصطناعي | يزود وكيل `geo-auditor` بسجلات الاستشهاد الحقيقية. |
 | [`sage-audit`](https://github.com/tmolavi/sage-audit) | محرك التدقيق الفني الشامل لـ SEO و AEO والمخططات | يغذي الوكلاء بقواعد الفحص الفني للويب. |
 | [`siteprobe`](https://github.com/tmolavi/siteprobe) | الزاحف الذاتي لفحص وإصلاح مواقع الويب تلقائياً | ينفذ التعديلات والإصلاحات البرمجية بناءً على التقارير. |
